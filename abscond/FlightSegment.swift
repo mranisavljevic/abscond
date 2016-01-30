@@ -18,7 +18,7 @@ class FlightSegment {
     let arrivalAirportLocation: String
     let airlineName: String
     let duration: String
-    let departing: Bool
+    var departing: Bool
     
     init(departureTime: String, arrivalTime: String, departureAirport: String, arrivalAirport: String, departureLocation: String, arrivalLocation: String, airlineName: String, duration: String, departing: Bool) {
         self.departureTimeRaw = departureTime
