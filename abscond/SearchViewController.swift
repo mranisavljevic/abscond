@@ -15,24 +15,70 @@ class SearchViewController: UIViewController {
     
     var flightOfferResults = [Flight]()
     
+    var nextWeekendDates = (start: "", end: "")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getNextWeekendDates()
+    }
+    
+    func getNextWeekendDates() {
+        let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        var dayInterval = (start: 0, end: 0)
+        let todayFormatter = NSDateFormatter()
+        todayFormatter.dateFormat = "EEEE"
+        let today = todayFormatter.stringFromDate(NSDate())
+        switch today {
+        case days[0]:
+            dayInterval.start = 4
+            dayInterval.end = 6
+        case days[1]:
+            dayInterval.start = 3
+            dayInterval.end = 5
+        case days[2]:
+            dayInterval.start = 2
+            dayInterval.end = 4
+        case days[3]:
+            dayInterval.start = 1
+            dayInterval.end = 3
+        case days[4]:
+            dayInterval.start = 1
+            dayInterval.end = 2
+        case days[5]:
+            dayInterval.start = 6
+            dayInterval.end = 8
+        case days[6]:
+            dayInterval.start = 5
+            dayInterval.end = 7
+        default: break
+        }
+        let secondsToStart = Double(dayInterval.start * 60 * 60 * 24)
+        let nextWeekendStart = NSDate().dateByAddingTimeInterval(secondsToStart)
+        
+        let secondsToEnd = Double(dayInterval.end * 60 * 60 * 24)
+        let nextWeekendEnd = NSDate().dateByAddingTimeInterval(secondsToEnd)
+        
+        let weekendFormatter = NSDateFormatter()
+        weekendFormatter.dateFormat = "yyyy-MM-dd"
+        let nextWeekendStartFormatted = weekendFormatter.stringFromDate(nextWeekendStart)
+        let nextWeekendEndFormatted = weekendFormatter.stringFromDate(nextWeekendEnd)
+        
+        self.nextWeekendDates.start = nextWeekendStartFormatted
+        self.nextWeekendDates.end = nextWeekendEndFormatted
     }
     
     func getInfoForTenAirports() {
         
         var flightOffersTemp = [Flight]()
         for i in 0...9 {
-            ExpediaAPI.searchFlights(tenRandomAirports[i], departureDate: "2016-02-05", returnDate: "2016-02-07", completion: { (success, data) -> () in
-                
+            ExpediaAPI.searchFlights(tenRandomAirports[i], departureDate: self.nextWeekendDates.start, returnDate: self.nextWeekendDates.end, completion: { (success, data) -> () in
                 if success {
                     
                     if let data = data {
                         
                         if let  flightOffers = JSONService.parseFlightSearchJSON(data) {
                             self.flightOfferResults = flightOffers
-//                            self.performSegueWithIdentifier("TableViewController", sender: nil)
                             flightOffersTemp.appendContentsOf(flightOffers)
                             if i == 9 {
                                 let sortedOffers = flightOffersTemp.sort({ (flightA, flightB) -> Bool in
@@ -46,6 +92,8 @@ class SearchViewController: UIViewController {
                             }
                         }
                     }
+                } else {
+                    print("error")
                 }
             })
         }
