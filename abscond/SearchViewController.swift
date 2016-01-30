@@ -23,13 +23,16 @@ class SearchViewController: UIViewController {
     
     func getInfoForTenAirports() {
         
-        for i in 1...10 {
+        for i in 0...9 {
             ExpediaAPI.searchFlights(tenRandomAirports[i], departureDate: "2016-02-05", returnDate: "2016-02-07", completion: { (success, data) -> () in
+                
                 if success {
+                    
                     if let data = data {
                         
                         if let  flightOffers = JSONService.parseFlightSearchJSON(data) {
                             self.flightOfferResults = flightOffers
+                            print(self.flightOfferResults)
                         }
                     }
                 }
@@ -44,5 +47,19 @@ class SearchViewController: UIViewController {
         tenRandomAirports = searchAirports.0
         
         getInfoForTenAirports()
+        
+//        performSegueWithIdentifier("TableViewController", sender: nil)
+    }
+
+
+//  MARK: Prepare for segue
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TableViewController" {
+            if let tableViewController = segue.destinationViewController as? TableViewController {
+                
+                tableViewController.flightOfferResults = self.flightOfferResults
+            }
+        }
     }
 }
