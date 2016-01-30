@@ -28,7 +28,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.flightOfferResults.count >= 10 ? 10 : self.flightOfferResults.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -39,6 +39,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100.0
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedFlight = self.flightOfferResults[indexPath.row]
+        let detailVC = FlightDetailViewController()
+        detailVC.flight = selectedFlight
+        self.presentViewController(detailVC, animated: true, completion: nil)
     }
 
 }

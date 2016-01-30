@@ -31,17 +31,16 @@ class FlightDetailViewModel {
             for segment in leg.flightSegments {
                 let formatter = NSDateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-//                2016-02-07T14:35:00.000-08:00
-                let durationFormatter = NSDateFormatter()
-                durationFormatter.dateFormat = "vH'H':mm'M'"
+                let characterSet = NSCharacterSet.letterCharacterSet()
+                var durationString = segment.duration.componentsSeparatedByCharactersInSet(characterSet).joinWithSeparator("")
+                let separatorIndex = durationString.startIndex.advancedBy((durationString.characters.count == 3 ? 1 : 2))
+                durationString.insert(":", atIndex: separatorIndex)
                 let departureDate = formatter.dateFromString(segment.departureTimeRaw)
                 let arrivalDate = formatter.dateFromString(segment.arrivalTimeRaw)
-                let durationTime = durationFormatter.dateFromString(segment.duration)
-                guard let departure = departureDate, arrival = arrivalDate, duration = durationTime else { break }
+                guard let departure = departureDate, arrival = arrivalDate else { break }
                 let departureTimeString = NSDateFormatter.localizedStringFromDate(departure, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
                 let arrivalTimeString = NSDateFormatter.localizedStringFromDate(arrival, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
-                let durationTimeString = NSDateFormatter.localizedStringFromDate(duration, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
-                let segmentString = "\(departureTimeString) -> \(arrivalTimeString)\n\(segment.departureAirportCode) -> \(segment.arrivalAirportCode)\n\(segment.airlineName)\n\(durationTimeString)"
+                let segmentString = "\(departureTimeString) -> \(arrivalTimeString)\n\(segment.departureAirportCode) -> \(segment.arrivalAirportCode)\nAirline: \(segment.airlineName)\nDuration: \(durationString)"
                 segmentsList.append(segmentString)
             }
         }
@@ -52,25 +51,3 @@ class FlightDetailViewModel {
     }
     
 }
-
-
-
-//let legs: [Leg]
-//let formattedPrice: String
-//let productKey: String
-//let mobileShoppingKey: String
-//let seatsRemaining: Int
-//let detailsUrl: String
-//
-//
-//let legId: String
-//let flightSegments: [FlightSegment]
-//
-//let departureTimeRaw: String
-//let arrivalTimeRaw: String
-//let departureAirportCode: String
-//let arrivalAirportCode: String
-//let departureAirportLocation: String
-//let arrivalAirportLocation: String
-//let airlineName: String
-//let duration: String

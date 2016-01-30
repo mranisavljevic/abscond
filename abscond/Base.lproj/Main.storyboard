@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
@@ -91,8 +92,62 @@
                     <view key="view" contentMode="scaleToFill" id="UbJ-A7-khf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-5G-Ica">
+                                <rect key="frame" x="20" y="121" width="560" height="251"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6Z-OF-iBp">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-8h-eLX">
+                                <rect key="frame" x="256.5" y="28" width="87" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEATS REMAINING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-fc-8iK">
+                                <rect key="frame" x="165" y="74.5" width="270.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3F-sZ-65c">
+                                <rect key="frame" x="200" y="380" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.82842303299999998" green="0.91177850999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="dnF-oq-nTO"/>
+                                    <constraint firstAttribute="width" constant="200" id="pc5-Vm-P5e"/>
+                                </constraints>
+                                <state key="normal" title="BUY"/>
+                                <connections>
+                                    <action selector="buyButtonPressed:" destination="eHp-Aw-AiR" eventType="touchUpInside" id="bTJ-H7-VIw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a3F-sZ-65c" firstAttribute="top" secondItem="Z3b-5G-Ica" secondAttribute="bottom" constant="8" id="HvU-n6-MnG"/>
+                            <constraint firstItem="P2q-cK-4Hr" firstAttribute="top" secondItem="a3F-sZ-65c" secondAttribute="bottom" constant="20" id="URB-Yz-FHO"/>
+                            <constraint firstItem="F2O-fc-8iK" firstAttribute="top" secondItem="Klg-8h-eLX" secondAttribute="bottom" constant="8" id="VtD-sn-tx9"/>
+                            <constraint firstItem="F2O-fc-8iK" firstAttribute="centerX" secondItem="Klg-8h-eLX" secondAttribute="centerX" id="YqK-Mr-Nca"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z3b-5G-Ica" secondAttribute="trailing" id="c3J-kA-ZkT"/>
+                            <constraint firstItem="Z3b-5G-Ica" firstAttribute="top" secondItem="F2O-fc-8iK" secondAttribute="bottom" constant="8" id="cj3-Bv-hgS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Z3b-5G-Ica" secondAttribute="leading" id="dj5-lR-vwm"/>
+                            <constraint firstItem="a3F-sZ-65c" firstAttribute="centerX" secondItem="UbJ-A7-khf" secondAttribute="centerX" id="fSa-yI-Knh"/>
+                            <constraint firstItem="Klg-8h-eLX" firstAttribute="top" secondItem="PcV-vz-2cf" secondAttribute="bottom" constant="8" id="jSZ-KU-O2t"/>
+                            <constraint firstItem="Klg-8h-eLX" firstAttribute="centerX" secondItem="UbJ-A7-khf" secondAttribute="centerX" id="nOB-e8-y2s"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buyButton" destination="a3F-sZ-65c" id="TVZ-v5-XVO"/>
+                        <outlet property="priceLabel" destination="Klg-8h-eLX" id="eFZ-Lr-PDs"/>
+                        <outlet property="seatsRemainingLabel" destination="F2O-fc-8iK" id="diC-ij-1S6"/>
+                        <outlet property="segmentCollectionView" destination="Z3b-5G-Ica" id="5X4-20-8Hd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyh-x1-WcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
