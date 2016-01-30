@@ -39,5 +39,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100.0
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedFlight = self.flightOfferResults[indexPath.row]
+        let detailVC = FlightDetailViewController()
+        detailVC.flight = selectedFlight
+        self.presentViewController(detailVC, animated: true, completion: nil)
+    }
 
 }
