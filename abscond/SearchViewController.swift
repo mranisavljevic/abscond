@@ -17,11 +17,12 @@ class SearchViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
     }
     
     func getInfoForTenAirports() {
         
+        var flightOffersTemp = [Flight]()
         for i in 0...9 {
             ExpediaAPI.searchFlights(tenRandomAirports[i], departureDate: "2016-02-05", returnDate: "2016-02-07", completion: { (success, data) -> () in
                 
@@ -31,7 +32,18 @@ class SearchViewController: UIViewController {
                         
                         if let  flightOffers = JSONService.parseFlightSearchJSON(data) {
                             self.flightOfferResults = flightOffers
-                            self.performSegueWithIdentifier("TableViewController", sender: nil)
+//                            self.performSegueWithIdentifier("TableViewController", sender: nil)
+                            flightOffersTemp.appendContentsOf(flightOffers)
+                            if i == 9 {
+                                let sortedOffers = flightOffersTemp.sort({ (flightA, flightB) -> Bool in
+                                    return flightA.formattedPrice < flightB.formattedPrice
+                                })
+                                self.flightOfferResults = sortedOffers
+                                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                                    print("Done")
+                                    self.performSegueWithIdentifier("TableViewController", sender: self)
+                                })
+                            }
                         }
                     }
                 }
@@ -55,7 +67,6 @@ class SearchViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TableViewController" {
             if let tableViewController = segue.destinationViewController as? TableViewController {
-                
                 tableViewController.flightOfferResults = self.flightOfferResults
             }
         }
