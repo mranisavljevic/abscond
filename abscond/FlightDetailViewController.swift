@@ -21,7 +21,7 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     var flight: Flight?
     
-    var flightSegments = [String]() {
+    var flightSegments = [[String : String]]() {
         didSet {
             self.segmentCollectionView.reloadData()
         }
@@ -30,27 +30,32 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     private var viewModel: FlightDetailViewModel? {
         didSet {
             guard let model = self.viewModel else { return }
-//            self.priceLabel.text = model.price
-//            self.seatsRemainingLabel.text = "\(model.seatsRemaining) SEATS LEFT!"
-//            self.flightSegments = model.legs
+            self.priceLabel.text = model.price
+            self.seatsRemainingLabel.text = model.seatsRemaining == 1 ? "\(model.seatsRemaining) SEAT LEFT!" : "\(model.seatsRemaining) SEATS LEFT!"
+//            var flightSegmentTemp = [String]()
+//            for var i = 1; i <= model.legs.count; i++ {
+//                guard let string = model.legs["\(i)"] else { break }
+//                flightSegmentTemp.append(string)
+//            }
+//            self.flightSegments = flightSegmentTemp
+            self.flightSegments = model.legs
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.buyButton.layer.cornerRadius = self.buyButton.frame.size.width / 2
+        self.segmentCollectionView.delegate = self
+        self.segmentCollectionView.dataSource = self
+        let nib = UINib(nibName: "FlightDetailCollectionViewCell", bundle: nil)
+        self.segmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "FlightDetailCollectionViewCell")
+        if let flight = self.flight {
+            self.viewModel = FlightDetailViewModel(flight: flight)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        self.buyButton.layer.cornerRadius = self.buyButton.frame.size.width / 2
-//        self.segmentCollectionView.delegate = self
-//        self.segmentCollectionView.dataSource = self
-//        let nib = UINib(nibName: "FlightDetailCollectionViewCell", bundle: nil)
-//        self.segmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "FlightDetailCollectionViewCell")
-        
-        if let flight = self.flight {
-            self.viewModel = FlightDetailViewModel(flight: flight)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +74,8 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FlightDetailCollectionViewCell", forIndexPath: indexPath) as! FlightDetailCollectionViewCell
-        cell.segmentString = self.flightSegments[indexPath.row]
+        cell.segmentNumber = "\(indexPath.row + 1)"
+        cell.segmentStrings = self.flightSegments[indexPath.row]
         return cell
     }
     

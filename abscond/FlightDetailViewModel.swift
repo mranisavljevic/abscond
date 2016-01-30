@@ -14,7 +14,7 @@ class FlightDetailViewModel {
     let price: String
     let seatsRemaining: Int
     let detailsUrl: String
-    let legs: [String]
+    let legs: [[String : String]]
     
     
     init(flight: Flight) {
@@ -25,28 +25,31 @@ class FlightDetailViewModel {
         self.legs = FlightDetailViewModel.formatLegs(flight.legs)
     }
     
-    private class func formatLegs(legs: [Leg]) -> [String] {
-        var segmentsList = [String]()
+    private class func formatLegs(legs: [Leg]) -> [[String : String]] {
+        var segmentsList = [[String : String]]()
         for leg in legs {
             for segment in leg.flightSegments {
                 let formatter = NSDateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
                 let characterSet = NSCharacterSet.letterCharacterSet()
-                var durationString = segment.duration.componentsSeparatedByCharactersInSet(characterSet).joinWithSeparator("")
-                let separatorIndex = durationString.startIndex.advancedBy((durationString.characters.count == 3 ? 1 : 2))
-                durationString.insert(":", atIndex: separatorIndex)
+                let durationString = segment.duration.componentsSeparatedByCharactersInSet(characterSet).joinWithSeparator(":")
+//                let separatorIndex = durationString.startIndex.advancedBy((durationString.characters.count == 3 ? 1 : 2))
+//                durationString.insert(":", atIndex: separatorIndex)
                 let departureDate = formatter.dateFromString(segment.departureTimeRaw)
                 let arrivalDate = formatter.dateFromString(segment.arrivalTimeRaw)
                 guard let departure = departureDate, arrival = arrivalDate else { break }
                 let departureTimeString = NSDateFormatter.localizedStringFromDate(departure, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
                 let arrivalTimeString = NSDateFormatter.localizedStringFromDate(arrival, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
-                let segmentString = "\(departureTimeString) -> \(arrivalTimeString)\n\(segment.departureAirportCode) -> \(segment.arrivalAirportCode)\nAirline: \(segment.airlineName)\nDuration: \(durationString)"
-                segmentsList.append(segmentString)
+//                let segmentString = "\(departureTimeString) -> \(arrivalTimeString)\n\(segment.departureAirportCode) -> \(segment.arrivalAirportCode)\nAirline: \(segment.airlineName)\nDuration: \(durationString)"
+                let segmentDictionary = ["datesAndTimes" : "\(departureTimeString) -> \(arrivalTimeString)", "airportCodes" : "\(segment.departureAirportCode) -> \(segment.arrivalAirportCode)", "airline" : "Airline: \(segment.airlineName)", "duration" : "Duration: \(durationString)"]
+                segmentsList.append(segmentDictionary)
             }
         }
-        for segment in segmentsList {
-            print(segment)
-        }
+//        var segmentDictionary = [String : String]()
+//        for var i = 1; i <= segmentsList.count; i++ {
+//            segmentDictionary["\(i)"] = segmentsList[i]
+//        }
+//        return segmentDictionary
         return segmentsList
     }
     

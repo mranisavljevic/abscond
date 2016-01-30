@@ -32,7 +32,6 @@ class SearchViewController: UIViewController {
                         
                         if let  flightOffers = JSONService.parseFlightSearchJSON(data) {
                             self.flightOfferResults = flightOffers
-//                            self.performSegueWithIdentifier("TableViewController", sender: nil)
                             flightOffersTemp.appendContentsOf(flightOffers)
                             if i == 9 {
                                 let sortedOffers = flightOffersTemp.sort({ (flightA, flightB) -> Bool in
