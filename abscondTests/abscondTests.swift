@@ -34,6 +34,12 @@ class abscondTests: XCTestCase {
         waitForExpectationsWithTimeout(6, handler: nil)
     }
     
+    func testRandomAirportGenerator() {
+        
+        
+//        XCTAssert(RandomAirportGenerator.arrivalAirports.count <= 10)
+    }
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

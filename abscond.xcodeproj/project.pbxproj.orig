@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015CB651C5C7AA800D10479 /* FlightSegment.swift */; };
-=======
 		5860FB851C5C64BE0076A531 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB841C5C64BE0076A531 /* TableViewController.swift */; };
 		5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB861C5C65030076A531 /* SearchViewController.swift */; };
 		5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB891C5C70CE0076A531 /* TableViewCell.xib */; };
 		5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */; };
->>>>>>> master
 		907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */; };
 		907ACE301C5C4E6200CF1763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907ACE2E1C5C4E6200CF1763 /* Main.storyboard */; };
 		907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE311C5C4E6200CF1763 /* abscond.xcdatamodeld */; };
 		907ACE351C5C4E6200CF1763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907ACE341C5C4E6200CF1763 /* Assets.xcassets */; };
 		907ACE381C5C4E6200CF1763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907ACE361C5C4E6200CF1763 /* LaunchScreen.storyboard */; };
 		907ACE431C5C4E6200CF1763 /* abscondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE421C5C4E6200CF1763 /* abscondTests.swift */; };
+<<<<<<< HEAD
+		BFB89DA31C5C78BF009A92AF /* RandomAirportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB89DA21C5C78BF009A92AF /* RandomAirportGenerator.swift */; };
+=======
 		907ACE521C5C5A2B00CF1763 /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE511C5C5A2B00CF1763 /* JSONService.swift */; };
 		90ACAF621C5C712700A1FC07 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ACAF611C5C712700A1FC07 /* Leg.swift */; };
 		90ACAF641C5C713F00A1FC07 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ACAF631C5C713F00A1FC07 /* Flight.swift */; };
+>>>>>>> master
 		BFD266041C5C5A8F00C36D27 /* ExpediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,14 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
 		9015CB651C5C7AA800D10479 /* FlightSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSegment.swift; sourceTree = "<group>"; };
-=======
 		5860FB841C5C64BE0076A531 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5860FB861C5C65030076A531 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5860FB891C5C70CE0076A531 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
->>>>>>> master
 		907ACE271C5C4E6200CF1763 /* abscond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abscond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		907ACE2F1C5C4E6200CF1763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,10 +54,15 @@
 		907ACE3E1C5C4E6200CF1763 /* abscondTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = abscondTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		907ACE421C5C4E6200CF1763 /* abscondTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abscondTests.swift; sourceTree = "<group>"; };
 		907ACE441C5C4E6200CF1763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		BFB89DA21C5C78BF009A92AF /* RandomAirportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAirportGenerator.swift; sourceTree = "<group>"; };
+		BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpediaAPI.swift; sourceTree = "<group>"; };
+=======
 		907ACE511C5C5A2B00CF1763 /* JSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
 		90ACAF611C5C712700A1FC07 /* Leg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		90ACAF631C5C713F00A1FC07 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpediaAPI.swift; path = ../ExpediaAPI.swift; sourceTree = "<group>"; };
+>>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,20 +83,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
 		9015CB641C5C76CF00D10479 /* Model */ = {
-=======
-		5860FB881C5C650B0076A531 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5860FB861C5C65030076A531 /* SearchViewController.swift */,
-				5860FB841C5C64BE0076A531 /* TableViewController.swift */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		907ACE1E1C5C4E6200CF1763 = {
->>>>>>> master
 			isa = PBXGroup;
 			children = (
 				907ACE4F1C5C4E9900CF1763 /* Core Data */,
@@ -106,9 +96,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		5860FB881C5C650B0076A531 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5860FB861C5C65030076A531 /* SearchViewController.swift */,
+				5860FB841C5C64BE0076A531 /* TableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		907ACE1E1C5C4E6200CF1763 = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */,
+				BFB89DA21C5C78BF009A92AF /* RandomAirportGenerator.swift */,
+=======
+>>>>>>> master
 				907ACE291C5C4E6200CF1763 /* abscond */,
 				907ACE411C5C4E6200CF1763 /* abscondTests */,
 				907ACE281C5C4E6200CF1763 /* Products */,
@@ -131,11 +135,7 @@
 				9015CB641C5C76CF00D10479 /* Model */,
 				907ACE4E1C5C4E9300CF1763 /* View */,
 				907ACE4D1C5C4E8800CF1763 /* Supporting Files */,
-<<<<<<< HEAD
-=======
-				907ACE4F1C5C4E9900CF1763 /* Core Data */,
 				5860FB881C5C650B0076A531 /* Controller */,
->>>>>>> master
 			);
 			path = abscond;
 			sourceTree = "<group>";
@@ -287,17 +287,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				BFB89DA31C5C78BF009A92AF /* RandomAirportGenerator.swift in Sources */,
+=======
 				90ACAF621C5C712700A1FC07 /* Leg.swift in Sources */,
 				907ACE521C5C5A2B00CF1763 /* JSONService.swift in Sources */,
+>>>>>>> master
 				BFD266041C5C5A8F00C36D27 /* ExpediaAPI.swift in Sources */,
 				5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */,
 				907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */,
-<<<<<<< HEAD
 				90ACAF641C5C713F00A1FC07 /* Flight.swift in Sources */,
-=======
 				5860FB851C5C64BE0076A531 /* TableViewController.swift in Sources */,
 				5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */,
->>>>>>> master
 				907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */,
 				9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */,
 			);
