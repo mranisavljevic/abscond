@@ -15,7 +15,6 @@ class FlightDetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var airlineLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
 
-    
     var segmentNumber: String?
     
     var segmentStrings: [String : AnyObject]? {
