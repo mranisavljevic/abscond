@@ -21,7 +21,7 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     var flight: Flight?
     
-    var flightSegments = [[String : String]]() {
+    var flightSegments = [[String : AnyObject]]() {
         didSet {
             self.segmentCollectionView.reloadData()
         }

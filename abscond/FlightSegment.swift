@@ -18,8 +18,9 @@ class FlightSegment {
     let arrivalAirportLocation: String
     let airlineName: String
     let duration: String
+    let departing: Bool
     
-    init(departureTime: String, arrivalTime: String, departureAirport: String, arrivalAirport: String, departureLocation: String, arrivalLocation: String, airlineName: String, duration: String) {
+    init(departureTime: String, arrivalTime: String, departureAirport: String, arrivalAirport: String, departureLocation: String, arrivalLocation: String, airlineName: String, duration: String, departing: Bool) {
         self.departureTimeRaw = departureTime
         self.arrivalTimeRaw = arrivalTime
         self.departureAirportCode = departureAirport
@@ -28,6 +29,7 @@ class FlightSegment {
         self.arrivalAirportLocation = arrivalLocation
         self.airlineName = airlineName
         self.duration = duration
+        self.departing = departing
     }
     
     

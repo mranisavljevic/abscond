@@ -14,7 +14,7 @@ class FlightDetailViewModel {
     let price: String
     let seatsRemaining: Int
     let detailsUrl: String
-    let legs: [[String : String]]
+    let legs: [[String : AnyObject]]
     
     
     init(flight: Flight) {
@@ -25,8 +25,8 @@ class FlightDetailViewModel {
         self.legs = FlightDetailViewModel.formatLegs(flight.legs)
     }
     
-    private class func formatLegs(legs: [Leg]) -> [[String : String]] {
-        var segmentsList = [[String : String]]()
+    private class func formatLegs(legs: [Leg]) -> [[String : AnyObject]] {
+        var segmentsList = [[String : AnyObject]]()
         for leg in legs {
             for segment in leg.flightSegments {
                 let formatter = NSDateFormatter()
@@ -41,7 +41,12 @@ class FlightDetailViewModel {
                 let departureTimeString = NSDateFormatter.localizedStringFromDate(departure, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
                 let arrivalTimeString = NSDateFormatter.localizedStringFromDate(arrival, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
 //                let segmentString = "\(departureTimeString) -> \(arrivalTimeString)\n\(segment.departureAirportCode) -> \(segment.arrivalAirportCode)\nAirline: \(segment.airlineName)\nDuration: \(durationString)"
-                let segmentDictionary = ["datesAndTimes" : "\(departureTimeString) -> \(arrivalTimeString)", "airportCodes" : "\(segment.departureAirportCode) -> \(segment.arrivalAirportCode)", "airline" : "Airline: \(segment.airlineName)", "duration" : "Duration: \(durationString)"]
+                var segmentDictionary = [String : AnyObject]()
+                segmentDictionary["datesAndTimes"] = "\(departureTimeString) -> \(arrivalTimeString)"
+                segmentDictionary["airportCodes"] = "\(segment.departureAirportCode) -> \(segment.arrivalAirportCode)"
+                segmentDictionary["airline"] = "Airline: \(segment.airlineName)"
+                segmentDictionary["duration"] = "Duration: \(durationString)"
+                segmentDictionary["departing"] = segment.departing
                 segmentsList.append(segmentDictionary)
             }
         }

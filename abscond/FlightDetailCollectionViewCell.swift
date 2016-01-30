@@ -18,13 +18,14 @@ class FlightDetailCollectionViewCell: UICollectionViewCell {
     
     var segmentNumber: String?
     
-    var segmentStrings: [String : String]? {
+    var segmentStrings: [String : AnyObject]? {
         didSet {
-            guard let segment = self.segmentStrings, dates = segment["datesAndTimes"], airports = segment["airportCodes"], airline = segment["airline"], duration = segment["duration"] else { return }
+            guard let segment = self.segmentStrings, dates = segment["datesAndTimes"] as? String, airports = segment["airportCodes"] as? String, airline = segment["airline"] as? String, duration = segment["duration"] as? String, departing = segment["departing"] as? Bool else { return }
             self.datesTimesLabel.text = dates
             self.airportCodesLabel.text = airports
             self.airlineLabel.text = airline
             self.durationLabel.text = duration
+            self.backgroundColor = departing ? UIColor.greenColor() : UIColor.redColor()
         }
     }
     
