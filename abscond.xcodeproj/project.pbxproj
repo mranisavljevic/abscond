@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015CB651C5C7AA800D10479 /* FlightSegment.swift */; };
 		907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */; };
 		907ACE301C5C4E6200CF1763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907ACE2E1C5C4E6200CF1763 /* Main.storyboard */; };
 		907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE311C5C4E6200CF1763 /* abscond.xcdatamodeld */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9015CB651C5C7AA800D10479 /* FlightSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSegment.swift; sourceTree = "<group>"; };
 		907ACE271C5C4E6200CF1763 /* abscond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abscond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		907ACE2F1C5C4E6200CF1763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,7 +45,7 @@
 		907ACE511C5C5A2B00CF1763 /* JSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
 		90ACAF611C5C712700A1FC07 /* Leg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		90ACAF631C5C713F00A1FC07 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
-		BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpediaAPI.swift; sourceTree = "<group>"; };
+		BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpediaAPI.swift; path = ../ExpediaAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +66,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9015CB641C5C76CF00D10479 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				907ACE4F1C5C4E9900CF1763 /* Core Data */,
+				BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */,
+				907ACE511C5C5A2B00CF1763 /* JSONService.swift */,
+				90ACAF611C5C712700A1FC07 /* Leg.swift */,
+				9015CB651C5C7AA800D10479 /* FlightSegment.swift */,
+				90ACAF631C5C713F00A1FC07 /* Flight.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		907ACE1E1C5C4E6200CF1763 = {
 			isa = PBXGroup;
 			children = (
-				BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */,
 				907ACE291C5C4E6200CF1763 /* abscond */,
 				907ACE411C5C4E6200CF1763 /* abscondTests */,
 				907ACE281C5C4E6200CF1763 /* Products */,
@@ -86,13 +100,10 @@
 		907ACE291C5C4E6200CF1763 /* abscond */ = {
 			isa = PBXGroup;
 			children = (
-				907ACE511C5C5A2B00CF1763 /* JSONService.swift */,
-				90ACAF611C5C712700A1FC07 /* Leg.swift */,
-				90ACAF631C5C713F00A1FC07 /* Flight.swift */,
+				9015CB641C5C76CF00D10479 /* Model */,
 				907ACE501C5C4E9E00CF1763 /* App */,
 				907ACE4E1C5C4E9300CF1763 /* View */,
 				907ACE4D1C5C4E8800CF1763 /* Supporting Files */,
-				907ACE4F1C5C4E9900CF1763 /* Core Data */,
 			);
 			path = abscond;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 				907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */,
 				90ACAF641C5C713F00A1FC07 /* Flight.swift in Sources */,
 				907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */,
+				9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

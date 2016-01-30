@@ -17,8 +17,22 @@ class JSONService {
             guard let legs = baseObject["legs"] as? [[String : AnyObject]], offers = baseObject["offers"] as? [[String : AnyObject]] else { return nil }
             var legsDictionary = [String : Leg]()
             for leg in legs {
-                guard let legId = leg["legId"] as? String, departureTimeRaw = leg["departureTimeRaw"] as? String, arrivalTimeRaw = leg["arrivalTimeRaw"] as? String, departureAirportCode = leg["departureAirportCode"] as? String, arrivalAirportCode = leg["arrivalAirportCode"] as? String, departureAirportLocation = leg["departureAirportLocation"] as? String, arrivalAirportLocation = leg["arrivalAirportLocation"] as? String, airlineName = leg["airlineName"] as? String, duration = leg["duration"] as? String else { return nil }
-                let legObject = Leg(legId: legId, departureTime: departureTimeRaw, arrivalTime: arrivalTimeRaw, departureAirport: departureAirportCode, arrivalAirport: arrivalAirportCode, departureLocation: departureAirportLocation, arrivalLocation: arrivalAirportLocation, airlineName: airlineName, duration: duration)
+                guard let legId = leg["legId"] as? String else { return nil }
+                guard let segments = leg["segments"] as? [[String : AnyObject]] else { return nil }
+                var flightSegments = [FlightSegment]()
+                for segment in segments {
+                    guard let departureTimeRaw = segment["departureTimeRaw"] as? String else { return nil }
+                    guard let arrivalTimeRaw = segment["arrivalTimeRaw"] as? String else { return nil }
+                    guard let departureAirportCode = segment["departureAirportCode"] as? String else { return nil }
+                    guard let arrivalAirportCode = segment["arrivalAirportCode"] as? String else { return nil }
+                    guard let departureAirportLocation = segment["departureAirportLocation"] as? String else { return nil }
+                    guard let arrivalAirportLocation = segment["arrivalAirportLocation"] as? String else { return nil }
+                    guard let airlineName = segment["airlineName"] as? String else { return nil }
+                    guard let duration = segment["duration"] as? String else { return nil }
+                    let flightSegment = FlightSegment(departureTime: departureTimeRaw, arrivalTime: arrivalTimeRaw, departureAirport: departureAirportCode, arrivalAirport: arrivalAirportCode, departureLocation: departureAirportLocation, arrivalLocation: arrivalAirportLocation, airlineName: airlineName, duration: duration)
+                    flightSegments.append(flightSegment)
+                }
+                let legObject = Leg(legId: legId, flightSegments: flightSegments)
                 legsDictionary[legId] = legObject
 //                var legDictionary = [String : AnyObject]()
 //                legDictionary["legId"] = legId

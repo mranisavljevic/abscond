@@ -21,7 +21,7 @@ class ExpediaAPI {
         NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
             if let data = data {
                 completion(success: true, data: data)
-                print("The data is: \(data)")
+//                print("The data is: \(data)")
             }
             if let _ = error {
                 if let response = response as? NSHTTPURLResponse {

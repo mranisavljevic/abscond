@@ -10,25 +10,11 @@ import Foundation
 
 class Leg {
     let legId: String
-    let departureTimeRaw: String
-    let arrivalTimeRaw: String
-    let departureAirportCode: String
-    let arrivalAirportCode: String
-    let departureAirportLocation: String
-    let arrivalAirportLocation: String
-    let airlineName: String
-    let duration: String
+    let flightSegments: [FlightSegment]
     
-    init(legId: String, departureTime: String, arrivalTime: String, departureAirport: String, arrivalAirport: String, departureLocation: String, arrivalLocation: String, airlineName: String, duration: String) {
+    init(legId: String, flightSegments: [FlightSegment]) {
         self.legId = legId
-        self.departureTimeRaw = departureTime
-        self.arrivalTimeRaw = arrivalTime
-        self.departureAirportCode = departureAirport
-        self.arrivalAirportCode = arrivalAirport
-        self.departureAirportLocation = departureLocation
-        self.arrivalAirportLocation = arrivalLocation
-        self.airlineName = airlineName
-        self.duration = duration
+        self.flightSegments = flightSegments
     }
     
 }
