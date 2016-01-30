@@ -253,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD266041C5C5A8F00C36D27 /* ExpediaAPI.swift in Sources */,
 				5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */,
 				907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */,
 				5860FB851C5C64BE0076A531 /* TableViewController.swift in Sources */,
