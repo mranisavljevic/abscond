@@ -18,21 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        ExpediaAPI.searchFlights("LAX", departureDate: "2016-02-05", returnDate: "2016-02-07") { (success, data) -> () in
-            if success {
-                if let response = data {
-                    guard let flights = JSONService.parseFlightSearchJSON(response) else { print("Massive failure"); return }
-                    let sorted = flights.sort({ (flightA, flightB) -> Bool in
-                        return flightA.formattedPrice < flightB.formattedPrice
-                    })
-//                    for sort in sorted {
-//                        print(sort.formattedPrice)
-//                    }
-                    guard let first = sorted.first else { return }
-                    let _ = FlightDetailViewModel.init(flight: first)
-                }
-            }
-        }
+//        ExpediaAPI.searchFlights("LAX", departureDate: "2016-02-05", returnDate: "2016-02-07") { (success, data) -> () in
+//            if success {
+//                if let response = data {
+//                    guard let flights = JSONService.parseFlightSearchJSON(response) else { print("Massive failure"); return }
+//                    let sorted = flights.sort({ (flightA, flightB) -> Bool in
+//                        return flightA.formattedPrice < flightB.formattedPrice
+//                    })
+////                    for sort in sorted {
+////                        print(sort.formattedPrice)
+////                    }
+//                    guard let first = sorted.first else { return }
+//                    let _ = FlightDetailViewModel.init(flight: first)
+//                }
+//            }
+//        }
         return true
     }
 

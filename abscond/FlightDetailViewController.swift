@@ -19,12 +19,7 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var segmentCollectionView: UICollectionView!
     
-    var flight: Flight? {
-        didSet {
-            guard let flight = self.flight else { return }
-            self.viewModel = FlightDetailViewModel(flight: flight)
-        }
-    }
+    var flight: Flight?
     
     var flightSegments = [String]() {
         didSet {
@@ -35,19 +30,27 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     private var viewModel: FlightDetailViewModel? {
         didSet {
             guard let model = self.viewModel else { return }
-            self.priceLabel.text = model.price
-            self.seatsRemainingLabel.text = "\(model.seatsRemaining) SEATS LEFT!"
-            self.flightSegments = model.legs
+//            self.priceLabel.text = model.price
+//            self.seatsRemainingLabel.text = "\(model.seatsRemaining) SEATS LEFT!"
+//            self.flightSegments = model.legs
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.buyButton.layer.cornerRadius = self.buyButton.frame.size.width / 2
-        self.segmentCollectionView.delegate = self
-        self.segmentCollectionView.dataSource = self
-        let nib = UINib(nibName: "FlightDetailCollectionViewCell", bundle: nil)
-        self.segmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "FlightDetailCollectionViewCell")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+//        self.buyButton.layer.cornerRadius = self.buyButton.frame.size.width / 2
+//        self.segmentCollectionView.delegate = self
+//        self.segmentCollectionView.dataSource = self
+//        let nib = UINib(nibName: "FlightDetailCollectionViewCell", bundle: nil)
+//        self.segmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "FlightDetailCollectionViewCell")
+        
+        if let flight = self.flight {
+            self.viewModel = FlightDetailViewModel(flight: flight)
+        }
     }
 
     override func didReceiveMemoryWarning() {
