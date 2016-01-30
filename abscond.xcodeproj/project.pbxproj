@@ -86,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5860FB861C5C65030076A531 /* SearchViewController.swift */,
+				90C77E911C5C8CF40015A7E6 /* FlightDetailViewController.swift */,
 				5860FB841C5C64BE0076A531 /* TableViewController.swift */,
 			);
 			name = Controller;
@@ -100,6 +101,7 @@
 				90ACAF611C5C712700A1FC07 /* Leg.swift */,
 				9015CB651C5C7AA800D10479 /* FlightSegment.swift */,
 				90ACAF631C5C713F00A1FC07 /* Flight.swift */,
+				90C77E931C5C8DF40015A7E6 /* FlightDetailViewModel.swift */,
 				5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */,
 			);
 			name = Model;

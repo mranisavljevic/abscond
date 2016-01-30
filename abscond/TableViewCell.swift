@@ -26,19 +26,22 @@ class TableViewCell: UITableViewCell {
     }
     
     func formatDates() {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.dateFormat = "MMMM-d"
+        let dateFormatterInput = NSDateFormatter()
+        dateFormatterInput.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        
+        let dateFormatterOutput = NSDateFormatter()
+        dateFormatterOutput.locale = NSLocale.currentLocale()
+        dateFormatterOutput.dateFormat = "E MMM d"
         
         let departOriginalString = self.flight!.legs[0].flightSegments[0].departureTimeRaw
-        let departDate = dateFormatter.dateFromString(departOriginalString)
-        let departFormattedString = dateFormatter.stringFromDate(departDate!)
+        let departDate = dateFormatterInput.dateFromString(departOriginalString)
+        let departFormattedString = dateFormatterOutput.stringFromDate(departDate!)
         
         let returnOriginalString = self.flight!.legs[1].flightSegments.last!.arrivalTimeRaw
-        let returnDate = dateFormatter.dateFromString(returnOriginalString)
-        let returnFormattedString = dateFormatter.stringFromDate(returnDate!)
+        let returnDate = dateFormatterInput.dateFromString(returnOriginalString)
+        let returnFormattedString = dateFormatterOutput.stringFromDate(returnDate!)
         
-        self.dateLabel.text = "\(departFormattedString) TO \(returnFormattedString)"
+        self.dateLabel.text = "\(departFormattedString) to \(returnFormattedString)"
     }
     
     override func awakeFromNib() {

@@ -25,7 +25,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.dataSource = self
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
-        self.tableView.alwaysBounceVertical = false
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +33,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! TableViewCell
-//        cell.flight = self.flights[indexPath.row]
+        cell.flight = self.flightOfferResults[indexPath.row]
         return cell
     }
     
