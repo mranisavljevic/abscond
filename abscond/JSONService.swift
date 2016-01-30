@@ -10,7 +10,6 @@ import Foundation
 
 class JSONService {
     
-    //Need to change this to a Flight class return value
     class func parseFlightSearchJSON(JSON: NSData) -> [Flight]? {
         do {
             guard let baseObject = try NSJSONSerialization.JSONObjectWithData(JSON, options: NSJSONReadingOptions.MutableContainers) as? [String : AnyObject] else { return nil }
@@ -21,31 +20,12 @@ class JSONService {
                 guard let segments = leg["segments"] as? [[String : AnyObject]] else { return nil }
                 var flightSegments = [FlightSegment]()
                 for segment in segments {
-                    guard let departureTimeRaw = segment["departureTimeRaw"] as? String else { return nil }
-                    guard let arrivalTimeRaw = segment["arrivalTimeRaw"] as? String else { return nil }
-                    guard let departureAirportCode = segment["departureAirportCode"] as? String else { return nil }
-                    guard let arrivalAirportCode = segment["arrivalAirportCode"] as? String else { return nil }
-                    guard let departureAirportLocation = segment["departureAirportLocation"] as? String else { return nil }
-                    guard let arrivalAirportLocation = segment["arrivalAirportLocation"] as? String else { return nil }
-                    guard let airlineName = segment["airlineName"] as? String else { return nil }
-                    guard let duration = segment["duration"] as? String else { return nil }
+                    guard let departureTimeRaw = segment["departureTimeRaw"] as? String, arrivalTimeRaw = segment["arrivalTimeRaw"] as? String, departureAirportCode = segment["departureAirportCode"] as? String, arrivalAirportCode = segment["arrivalAirportCode"] as? String, departureAirportLocation = segment["departureAirportLocation"] as? String, arrivalAirportLocation = segment["arrivalAirportLocation"] as? String, airlineName = segment["airlineName"] as? String, duration = segment["duration"] as? String else { return nil }
                     let flightSegment = FlightSegment(departureTime: departureTimeRaw, arrivalTime: arrivalTimeRaw, departureAirport: departureAirportCode, arrivalAirport: arrivalAirportCode, departureLocation: departureAirportLocation, arrivalLocation: arrivalAirportLocation, airlineName: airlineName, duration: duration)
                     flightSegments.append(flightSegment)
                 }
                 let legObject = Leg(legId: legId, flightSegments: flightSegments)
                 legsDictionary[legId] = legObject
-//                var legDictionary = [String : AnyObject]()
-//                legDictionary["legId"] = legId
-//                legDictionary["departureTimeRaw"] = departureTimeRaw
-//                legDictionary["arrivalTimeRaw"] = arrivalTimeRaw
-//                legDictionary["departureAirportCode"] = departureAirportCode
-//                legDictionary["arrivalAirportCode"] = arrivalAirportCode
-//                legDictionary["departureAirportLocation"] = departureAirportLocation
-//                legDictionary["arrivalAirportLocation"] = arrivalAirportLocation
-//                legDictionary["airlineName"] = airlineName
-//                legDictionary["duration"] = duration
-//                legsDictionary[legId] = legDictionary
-                
             }
             var flightOffers = [Flight]()
             for offer in offers {
@@ -57,18 +37,6 @@ class JSONService {
                 }
                 let flight = Flight(legs: offerLegs, formattedPrice: formattedPrice, productKey: productKey, mobileShoppingKey: mobileShoppingKey, seatsRemaining: seatsRemaining, detailsUrl: detailsUrl)
                 flightOffers.append(flight)
-//                var offerLegs = [String : AnyObject]()
-//                for legId in legIds {
-//                    offerLegs["legId"] = legsDictionary[legId]
-//                }
-//                var offerDictionary = [String : AnyObject]()
-//                offerDictionary["legs"] = offerLegs
-//                offerDictionary["formattedPrice"] = formattedPrice
-//                offerDictionary["productKey"] = productKey
-//                offerDictionary["mobileShoppingKey"] = mobileShoppingKey
-//                offerDictionary["seatsRemaining"] = seatsRemaining
-//                offerDictionary["detailsUrl"] = detailsUrl
-//                flightOffers.append(offerDictionary)
             }
             if flightOffers.count > 0 {
                 return flightOffers

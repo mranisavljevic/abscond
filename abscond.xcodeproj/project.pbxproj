@@ -100,8 +100,8 @@
 		907ACE291C5C4E6200CF1763 /* abscond */ = {
 			isa = PBXGroup;
 			children = (
-				9015CB641C5C76CF00D10479 /* Model */,
 				907ACE501C5C4E9E00CF1763 /* App */,
+				9015CB641C5C76CF00D10479 /* Model */,
 				907ACE4E1C5C4E9300CF1763 /* View */,
 				907ACE4D1C5C4E8800CF1763 /* Supporting Files */,
 			);
