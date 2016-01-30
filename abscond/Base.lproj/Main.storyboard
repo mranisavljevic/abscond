@@ -78,5 +78,23 @@
             </objects>
             <point key="canvasLocation" x="1258" y="343"/>
         </scene>
+        <!--Flight Detail View Controller-->
+        <scene sceneID="FJJ-Kt-SuM">
+            <objects>
+                <viewController storyboardIdentifier="FlightDetailViewController" id="eHp-Aw-AiR" customClass="FlightDetailViewController" customModule="abscond" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PcV-vz-2cf"/>
+                        <viewControllerLayoutGuide type="bottom" id="P2q-cK-4Hr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UbJ-A7-khf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyh-x1-WcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910" y="177"/>
+        </scene>
     </scenes>
 </document>
