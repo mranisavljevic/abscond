@@ -20,6 +20,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        let nib = UINib(nibName: "TableViewCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,8 +29,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! TableViewCell
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100.0
     }
 
 }
