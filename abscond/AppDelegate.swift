@@ -17,9 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        RandomAirportGenerator.tenRandomAirports()
-        
+                
 //        ExpediaAPI.searchFlights("LAX", departureDate: "2016-02-05", returnDate: "2016-02-07") { (success, data) -> () in
 //            if success {
 //                if let response = data {
