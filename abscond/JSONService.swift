@@ -41,6 +41,8 @@ class JSONService {
                     guard let legTemp = legsDictionary[legId] else { break }
                     offerLegs.append(legTemp)
                 }
+                let flight = Flight(legs: offerLegs, formattedPrice: formattedPrice, productKey: productKey, mobileShoppingKey: mobileShoppingKey, seatsRemaining: seatsRemaining, detailsUrl: detailsUrl)
+                flightOffers.append(flight)
 //                var offerLegs = [String : AnyObject]()
 //                for legId in legIds {
 //                    offerLegs["legId"] = legsDictionary[legId]
