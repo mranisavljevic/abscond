@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    var flights = [Flight]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.dataSource = self
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
+        self.tableView.alwaysBounceVertical = false
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,11 +32,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! TableViewCell
+//        cell.flight = self.flights[indexPath.row]
         return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100.0
+        let height = self.view.frame.size.height
+        return height/10.0
     }
 
 }
