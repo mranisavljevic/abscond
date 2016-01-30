@@ -10,6 +10,15 @@ import UIKit
 
 class FlightDetailCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var segmentLabel: UILabel!
+    
+    var segmentString: String? {
+        didSet {
+            guard let segment = self.segmentString else { return }
+            self.segmentLabel.text = segment
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
