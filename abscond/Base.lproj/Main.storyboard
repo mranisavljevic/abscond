@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -23,7 +23,6 @@
                                 <state key="normal" title="SEARCH"/>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgX-Pu-SPD"/>
-                                    <segue destination="fsD-MP-YrK" kind="show" identifier="tableViewSegue" id="D4V-4B-fph"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHERE TO?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmv-Ul-ZYx">
@@ -41,6 +40,9 @@
                             <constraint firstItem="Fmv-Ul-ZYx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ovy-i5-Ryd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="fsD-MP-YrK" kind="show" identifier="TableViewController" id="VWD-Uk-dUE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qCD-P5-Yfc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -66,7 +68,7 @@
                         <constraints>
                             <constraint firstItem="Yh6-dy-YHD" firstAttribute="top" secondItem="qCD-P5-Yfc" secondAttribute="bottom" id="RvP-uW-RVn"/>
                             <constraint firstItem="qCD-P5-Yfc" firstAttribute="leading" secondItem="PSv-F5-L9z" secondAttribute="leading" id="SPm-VD-hE6"/>
-                            <constraint firstItem="qCD-P5-Yfc" firstAttribute="top" secondItem="PSv-F5-L9z" secondAttribute="top" id="eaj-Ic-Om9"/>
+                            <constraint firstItem="qCD-P5-Yfc" firstAttribute="top" secondItem="PSv-F5-L9z" secondAttribute="top" constant="20" id="eaj-Ic-Om9"/>
                             <constraint firstAttribute="trailing" secondItem="qCD-P5-Yfc" secondAttribute="trailing" id="op1-Pu-Quo"/>
                         </constraints>
                     </view>

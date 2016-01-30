@@ -11,6 +11,7 @@
 		5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB861C5C65030076A531 /* SearchViewController.swift */; };
 		5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB891C5C70CE0076A531 /* TableViewCell.xib */; };
 		5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */; };
+		5860FB8E1C5D350A0076A531 /* BitlyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */; };
 		9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015CB651C5C7AA800D10479 /* FlightSegment.swift */; };
 		907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */; };
 		907ACE301C5C4E6200CF1763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907ACE2E1C5C4E6200CF1763 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		5860FB861C5C65030076A531 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5860FB891C5C70CE0076A531 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitlyAPI.swift; sourceTree = "<group>"; };
 		9015CB651C5C7AA800D10479 /* FlightSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSegment.swift; sourceTree = "<group>"; };
 		907ACE271C5C4E6200CF1763 /* abscond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abscond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				9015CB651C5C7AA800D10479 /* FlightSegment.swift */,
 				90ACAF631C5C713F00A1FC07 /* Flight.swift */,
 				90C77E931C5C8DF40015A7E6 /* FlightDetailViewModel.swift */,
+				5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				90C77E941C5C8DF40015A7E6 /* FlightDetailViewModel.swift in Sources */,
 				90C77E921C5C8CF40015A7E6 /* FlightDetailViewController.swift in Sources */,
 				5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */,
+				5860FB8E1C5D350A0076A531 /* BitlyAPI.swift in Sources */,
 				907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */,
 				9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */,
 			);

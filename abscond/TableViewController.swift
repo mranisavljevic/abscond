@@ -33,6 +33,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! TableViewCell
+        cell.flight = self.flightOfferResults[indexPath.row]
         return cell
     }
     
