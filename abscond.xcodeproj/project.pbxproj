@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5860FB851C5C64BE0076A531 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB841C5C64BE0076A531 /* TableViewController.swift */; };
+		5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB861C5C65030076A531 /* SearchViewController.swift */; };
+		5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB891C5C70CE0076A531 /* TableViewCell.xib */; };
+		5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */; };
 		907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */; };
 		907ACE301C5C4E6200CF1763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907ACE2E1C5C4E6200CF1763 /* Main.storyboard */; };
 		907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE311C5C4E6200CF1763 /* abscond.xcdatamodeld */; };
@@ -27,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5860FB841C5C64BE0076A531 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5860FB861C5C65030076A531 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5860FB891C5C70CE0076A531 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		907ACE271C5C4E6200CF1763 /* abscond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abscond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		907ACE2F1C5C4E6200CF1763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5860FB881C5C650B0076A531 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5860FB861C5C65030076A531 /* SearchViewController.swift */,
+				5860FB841C5C64BE0076A531 /* TableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		907ACE1E1C5C4E6200CF1763 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +101,7 @@
 				907ACE4E1C5C4E9300CF1763 /* View */,
 				907ACE4D1C5C4E8800CF1763 /* Supporting Files */,
 				907ACE4F1C5C4E9900CF1763 /* Core Data */,
+				5860FB881C5C650B0076A531 /* Controller */,
 			);
 			path = abscond;
 			sourceTree = "<group>";
@@ -111,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				907ACE2E1C5C4E6200CF1763 /* Main.storyboard */,
+				5860FB891C5C70CE0076A531 /* TableViewCell.xib */,
+				5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -213,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				907ACE381C5C4E6200CF1763 /* LaunchScreen.storyboard in Resources */,
+				5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */,
 				907ACE351C5C4E6200CF1763 /* Assets.xcassets in Resources */,
 				907ACE301C5C4E6200CF1763 /* Main.storyboard in Resources */,
 			);
@@ -233,7 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD266041C5C5A8F00C36D27 /* ExpediaAPI.swift in Sources */,
+				5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */,
 				907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */,
+				5860FB851C5C64BE0076A531 /* TableViewController.swift in Sources */,
+				5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */,
 				907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
