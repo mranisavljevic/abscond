@@ -11,7 +11,9 @@ import UIKit
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var flights = [Flight]()
+    
+    var flightOfferResults = [Flight]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let height = self.view.frame.size.height
-        return height/10.0
+        return 100.0
     }
 
 }
