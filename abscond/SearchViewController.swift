@@ -17,8 +17,7 @@ class SearchViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
     }
     
     func getInfoForTenAirports() {
@@ -32,7 +31,7 @@ class SearchViewController: UIViewController {
                         
                         if let  flightOffers = JSONService.parseFlightSearchJSON(data) {
                             self.flightOfferResults = flightOffers
-                            print(self.flightOfferResults)
+                            self.performSegueWithIdentifier("TableViewController", sender: nil)
                         }
                     }
                 }
@@ -47,8 +46,7 @@ class SearchViewController: UIViewController {
         tenRandomAirports = searchAirports.0
         
         getInfoForTenAirports()
-        
-//        performSegueWithIdentifier("TableViewController", sender: nil)
+
     }
 
 
