@@ -23,6 +23,8 @@
 		907ACE521C5C5A2B00CF1763 /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE511C5C5A2B00CF1763 /* JSONService.swift */; };
 		90ACAF621C5C712700A1FC07 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ACAF611C5C712700A1FC07 /* Leg.swift */; };
 		90ACAF641C5C713F00A1FC07 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ACAF631C5C713F00A1FC07 /* Flight.swift */; };
+		90C77E921C5C8CF40015A7E6 /* FlightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C77E911C5C8CF40015A7E6 /* FlightDetailViewController.swift */; };
+		90C77E941C5C8DF40015A7E6 /* FlightDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C77E931C5C8DF40015A7E6 /* FlightDetailViewModel.swift */; };
 		BFD266041C5C5A8F00C36D27 /* ExpediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		907ACE511C5C5A2B00CF1763 /* JSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
 		90ACAF611C5C712700A1FC07 /* Leg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		90ACAF631C5C713F00A1FC07 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		90C77E911C5C8CF40015A7E6 /* FlightDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailViewController.swift; sourceTree = "<group>"; };
+		90C77E931C5C8DF40015A7E6 /* FlightDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailViewModel.swift; sourceTree = "<group>"; };
 		BFD266031C5C5A8F00C36D27 /* ExpediaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpediaAPI.swift; path = ../ExpediaAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +290,8 @@
 				907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */,
 				90ACAF641C5C713F00A1FC07 /* Flight.swift in Sources */,
 				5860FB851C5C64BE0076A531 /* TableViewController.swift in Sources */,
+				90C77E941C5C8DF40015A7E6 /* FlightDetailViewModel.swift in Sources */,
+				90C77E921C5C8CF40015A7E6 /* FlightDetailViewController.swift in Sources */,
 				5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */,
 				5860FB8E1C5D350A0076A531 /* BitlyAPI.swift in Sources */,
 				907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */,
