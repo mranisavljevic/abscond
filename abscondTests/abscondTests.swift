@@ -21,6 +21,19 @@ class abscondTests: XCTestCase {
         super.tearDown()
     }
     
+    func testSearchFlight() {
+        let expectation = expectationWithDescription("Expecting the network call to succeed")
+        
+        ExpediaAPI.searchFlights("PDX", departureDate: "2016-02-05", returnDate: "2016-02-07") { (success, data) -> () in
+            if success {
+                expectation.fulfill()
+            } else {
+                XCTFail("Network call failed!")
+            }
+        }
+        waitForExpectationsWithTimeout(6, handler: nil)
+    }
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
