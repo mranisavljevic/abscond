@@ -36,7 +36,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.flightOfferResults.count >= 10 ? 10 : self.flightOfferResults.count
+        return self.flightOfferResults.count// >= 10 ? 10 : self.flightOfferResults.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -82,17 +82,35 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func getInfoForTenAirports() {
-        
+        var counter: Int = 0 {
+            didSet {
+//                print(counter)
+                if counter == 10 {
+                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                        self.performSegueWithIdentifier("TableViewController", sender: self)
+                    })
+                }
+            }
+        }
         var flightOffersTemp = [Flight]()
         for i in 0...9 {
+//            print("Searching \(self.tenRandomAirports[i])")
             ExpediaAPI.searchFlights(tenRandomAirports[i], departureDate: self.nextWeekendDates.start, returnDate: self.nextWeekendDates.end, completion: { (success, data) -> () in
                 if success {
-                    
                     if let data = data {
-                        
                         if let  flightOffers = JSONService.parseFlightSearchJSON(data) {
                             self.flightOfferResults = flightOffers
-                            flightOffersTemp.appendContentsOf(flightOffers)
+                            let sorted = flightOffers.sort({ (a, b) -> Bool in
+                                if let priceA = Double(a.formattedPrice.substringFromIndex(a.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: "")), priceB = Double(b.formattedPrice.substringFromIndex(b.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: "")) {
+                                    return priceA < priceB
+                                }
+                                return a.formattedPrice < b.formattedPrice
+                            })
+                            if sorted.count >= 2 {
+//                                print("Adding \(self.tenRandomAirports[i]): \(sorted[0].formattedPrice) & \(sorted[1].formattedPrice)")
+                                flightOffersTemp.append(sorted[0])
+                                flightOffersTemp.append(sorted[1])
+                            }
                             if i == 9 {
                                 let sortedOffers = flightOffersTemp.sort({ (flightA, flightB) -> Bool in
                                     let priceA = Double(flightA.formattedPrice.substringFromIndex(flightA.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: ""))
@@ -103,14 +121,16 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                                     return a < b
                                 })
                                 self.flightOfferResults = sortedOffers
-                                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                                    self.performSegueWithIdentifier("TableViewController", sender: self)
-                                })
                             }
                         }
+                        counter++
+                    } else {
+                        print("No data returned for airport: \(self.tenRandomAirports[i])")
+                        counter++
                     }
                 } else {
                     print("error")
+                    counter++
                 }
             })
         }
