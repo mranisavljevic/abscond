@@ -33,12 +33,6 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
             guard let model = self.viewModel else { return }
             self.priceLabel.text = model.price
             self.seatsRemainingLabel.text = model.seatsRemaining == 1 ? "\(model.seatsRemaining) SEAT LEFT!" : "\(model.seatsRemaining) SEATS LEFT!"
-//            var flightSegmentTemp = [String]()
-//            for var i = 1; i <= model.legs.count; i++ {
-//                guard let string = model.legs["\(i)"] else { break }
-//                flightSegmentTemp.append(string)
-//            }
-//            self.flightSegments = flightSegmentTemp
             self.flightSegments = model.legs
         }
     }
@@ -103,10 +97,6 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(collectionView.frame.width - 8.0, 100.0)
     }
-    
-//    func safariViewControllerDidFinish(controller: SFSafariViewController) {
-////        self.dismissViewControllerAnimated(true, completion: nil)
-//    }
 
 }
 
