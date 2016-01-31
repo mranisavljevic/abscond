@@ -27,6 +27,14 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "FlightDetailViewController" {
+            if let flight = sender as? Flight, detailVC = segue.destinationViewController as? FlightDetailViewController {
+                detailVC.flight = flight
+            }
+        }
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.flightOfferResults.count >= 10 ? 10 : self.flightOfferResults.count
     }
@@ -43,9 +51,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedFlight = self.flightOfferResults[indexPath.row]
-        let detailVC = FlightDetailViewController()
-        detailVC.flight = selectedFlight
-        self.presentViewController(detailVC, animated: true, completion: nil)
+        self.performSegueWithIdentifier("FlightDetailViewController", sender: selectedFlight)
     }
 
 }

@@ -3,18 +3,37 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlightDetailCollectionViewCell" id="gTV-IL-0wX" customClass="FlightDetailCollectionViewCell" customModule="abscond" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="363" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="363" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="363" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="363" height="160"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-9m-N9W">
-                        <rect key="frame" x="8" y="8" width="347" height="34"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-9m-N9W">
+                        <rect key="frame" x="8" y="8" width="347" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-Ke-CcU">
+                        <rect key="frame" x="8" y="30.5" width="347" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Y3-jK-Pd5">
+                        <rect key="frame" x="8" y="53" width="347" height="76.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuK-FL-PG2">
+                        <rect key="frame" x="8" y="131.5" width="347" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -22,11 +41,33 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <size key="customSize" width="363" height="50"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="CuK-FL-PG2" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottomMargin" id="1R1-ON-xrA"/>
+                <constraint firstItem="cLl-9m-N9W" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="AVO-dE-7p4"/>
+                <constraint firstItem="CuK-FL-PG2" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailingMargin" id="L3b-85-6uf"/>
+                <constraint firstItem="7Y3-jK-Pd5" firstAttribute="top" secondItem="YZT-Ke-CcU" secondAttribute="bottom" constant="2" id="M99-Fa-tTH"/>
+                <constraint firstItem="cLl-9m-N9W" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" id="MQo-32-Pxu"/>
+                <constraint firstItem="7Y3-jK-Pd5" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailingMargin" id="Npx-kT-e9W"/>
+                <constraint firstItem="CuK-FL-PG2" firstAttribute="top" secondItem="7Y3-jK-Pd5" secondAttribute="bottom" constant="2" id="SAL-ja-EvH"/>
+                <constraint firstItem="YZT-Ke-CcU" firstAttribute="top" secondItem="cLl-9m-N9W" secondAttribute="bottom" constant="2" id="Ze8-8j-Vtr"/>
+                <constraint firstItem="YZT-Ke-CcU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="cQW-ah-kiS"/>
+                <constraint firstItem="CuK-FL-PG2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="eX6-rz-jme"/>
+                <constraint firstItem="CuK-FL-PG2" firstAttribute="top" secondItem="7Y3-jK-Pd5" secondAttribute="bottom" constant="2" id="fjY-me-bt1"/>
+                <constraint firstItem="YZT-Ke-CcU" firstAttribute="top" secondItem="cLl-9m-N9W" secondAttribute="bottom" constant="2" id="izx-yB-q2r"/>
+                <constraint firstItem="cLl-9m-N9W" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailingMargin" id="lWB-5T-Zpp"/>
+                <constraint firstItem="7Y3-jK-Pd5" firstAttribute="top" secondItem="YZT-Ke-CcU" secondAttribute="bottom" constant="2" id="oYn-hC-J4E"/>
+                <constraint firstItem="7Y3-jK-Pd5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="rt5-8F-1MM"/>
+                <constraint firstItem="YZT-Ke-CcU" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailingMargin" id="vdl-0g-ilZ"/>
+            </constraints>
+            <size key="customSize" width="363" height="160"/>
             <connections>
-                <outlet property="segmentLabel" destination="cLl-9m-N9W" id="CSJ-Ji-77f"/>
+                <outlet property="airlineLabel" destination="7Y3-jK-Pd5" id="QLQ-Yr-FDf"/>
+                <outlet property="airportCodesLabel" destination="YZT-Ke-CcU" id="32c-lC-ohB"/>
+                <outlet property="datesTimesLabel" destination="cLl-9m-N9W" id="TZG-Uu-mOs"/>
+                <outlet property="durationLabel" destination="CuK-FL-PG2" id="k5r-q0-BCg"/>
             </connections>
-            <point key="canvasLocation" x="272.5" y="253"/>
+            <point key="canvasLocation" x="272.5" y="308"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -26,9 +26,9 @@ class ExpediaAPI {
             if let _ = error {
                 if let response = response as? NSHTTPURLResponse {
                     print("Error with code: \(response.statusCode)")
+                    completion(success: false, data: nil)
                 }
             }
-            completion(success: false, data: nil)
             }.resume()
     }
 }
