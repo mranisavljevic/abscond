@@ -40,12 +40,30 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.buyButton.layer.cornerRadius = self.buyButton.frame.size.width / 2
+        self.buyButton.layer.opacity = 0.6
         self.segmentCollectionView.delegate = self
         self.segmentCollectionView.dataSource = self
         let nib = UINib(nibName: "FlightDetailCollectionViewCell", bundle: nil)
         self.segmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "FlightDetailCollectionViewCell")
         if let flight = self.flight {
             self.viewModel = FlightDetailViewModel(flight: flight)
+            FlickerAPI.searchFlickrByTerm(flight.legs[0].flightSegments.last!.arrivalAirportLocation) { (success, data) -> () in
+                if success {
+                    print(data)
+                    if let data = data {
+                        if let flickrPhotoArray = FlickrJSONService.parsePhotoSearchJSON(data) {
+                            if flickrPhotoArray.count > 0 {
+                                let flickrPhoto = flickrPhotoArray[0]
+                                let imageData = NSData(contentsOfURL: flickrPhoto.flickrImageURL()!)
+                                let image = UIImage(data: imageData!)
+                                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                                    self.buyButton.setBackgroundImage(image, forState: UIControlState.Normal)
+                                })
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     

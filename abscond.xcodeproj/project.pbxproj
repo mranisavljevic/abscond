@@ -14,6 +14,9 @@
 		5860FB8E1C5D350A0076A531 /* BitlyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */; };
 		5860FB901C5D77290076A531 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB8F1C5D77280076A531 /* map.png */; };
 		5860FB921C5DA82F0076A531 /* Capitals.dfont in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB911C5DA73B0076A531 /* Capitals.dfont */; };
+		5860FB991C5DD6DF0076A531 /* FlickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB971C5DD6DF0076A531 /* FlickerAPI.swift */; };
+		5860FB9A1C5DD6DF0076A531 /* FlickrJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB981C5DD6DF0076A531 /* FlickrJSONService.swift */; };
+		5860FB9C1C5DD7BE0076A531 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB9B1C5DD7BE0076A531 /* Photo.swift */; };
 		9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015CB651C5C7AA800D10479 /* FlightSegment.swift */; };
 		9069966E1C5D4659006ED958 /* FlightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */; };
 		9069966F1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9069966D1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib */; };
@@ -53,6 +56,9 @@
 		5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitlyAPI.swift; sourceTree = "<group>"; };
 		5860FB8F1C5D77280076A531 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		5860FB911C5DA73B0076A531 /* Capitals.dfont */ = {isa = PBXFileReference; lastKnownFileType = file; path = Capitals.dfont; sourceTree = "<group>"; };
+		5860FB971C5DD6DF0076A531 /* FlickerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickerAPI.swift; sourceTree = "<group>"; };
+		5860FB981C5DD6DF0076A531 /* FlickrJSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrJSONService.swift; sourceTree = "<group>"; };
+		5860FB9B1C5DD7BE0076A531 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9015CB651C5C7AA800D10479 /* FlightSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSegment.swift; sourceTree = "<group>"; };
 		9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		9069966D1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightDetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -118,6 +124,9 @@
 				90C77E931C5C8DF40015A7E6 /* FlightDetailViewModel.swift */,
 				9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */,
 				5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */,
+				5860FB971C5DD6DF0076A531 /* FlickerAPI.swift */,
+				5860FB981C5DD6DF0076A531 /* FlickrJSONService.swift */,
+				5860FB9B1C5DD7BE0076A531 /* Photo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -314,13 +323,16 @@
 				9069966E1C5D4659006ED958 /* FlightDetailCollectionViewCell.swift in Sources */,
 				BFB89DA31C5C78BF009A92AF /* RandomAirportGenerator.swift in Sources */,
 				90ACAF621C5C712700A1FC07 /* Leg.swift in Sources */,
+				5860FB9A1C5DD6DF0076A531 /* FlickrJSONService.swift in Sources */,
 				907ACE521C5C5A2B00CF1763 /* JSONService.swift in Sources */,
 				BFD266041C5C5A8F00C36D27 /* ExpediaAPI.swift in Sources */,
+				5860FB991C5DD6DF0076A531 /* FlickerAPI.swift in Sources */,
 				5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */,
 				907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */,
 				90ACAF641C5C713F00A1FC07 /* Flight.swift in Sources */,
 				5860FB851C5C64BE0076A531 /* TableViewController.swift in Sources */,
 				90C77E941C5C8DF40015A7E6 /* FlightDetailViewModel.swift in Sources */,
+				5860FB9C1C5DD7BE0076A531 /* Photo.swift in Sources */,
 				90C77E921C5C8CF40015A7E6 /* FlightDetailViewController.swift in Sources */,
 				5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */,
 				5860FB8E1C5D350A0076A531 /* BitlyAPI.swift in Sources */,
