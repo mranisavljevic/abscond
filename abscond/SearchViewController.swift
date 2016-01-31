@@ -218,7 +218,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func getInfoForTenAirportsCopy(index: Int, completion:(flights: [Flight]?)->()) {
         dispatch_async(queue) { () -> Void in
             var flightOffersTemp = [Flight]()
-            print("Call: \(index)")
             print("Searching: \(self.tenRandomAirports[index])")
             ExpediaAPI.searchFlights(self.tenRandomAirports[index], departureDate: self.nextWeekendDates.start, returnDate: self.nextWeekendDates.end, completion: { (success, data) -> () in
                 if success {
@@ -245,6 +244,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                     } else {
                         completion(flights: nil)
                     }
+                } else {
+                    completion(flights: nil)
                 }
             })
         }
@@ -293,7 +294,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                 if let results = flights {
                     self.flightOfferResults.appendContentsOf(results)
                 }
-                if i == 9 {
+                if i >= 9 {
                     self.sortAllResults()
                 }
             })
@@ -350,7 +351,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
 //  MARK: Scroll View Delegate
-    var completionCounter = 0
+    var completionCounter = 0 {
+        didSet {
+            print("Just completed search #\(completionCounter)")
+        }
+    }
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if !self.isSearching {
             self.isSearching = true

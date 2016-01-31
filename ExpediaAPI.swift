@@ -32,18 +32,10 @@ class ExpediaAPI {
             if let data = data {
                 completion(success: true, data: data)
                 done = true
-//                print("The data is: \(data)")
             } else {
                 completion(success: false, data: nil)
                 done = true
             }
-//            if let _ = error {
-//                if let response = response as? NSHTTPURLResponse {
-//                    completion(success: false, data: nil)
-//                    done = true
-//                }
-//            }
-//            print("Done Searching")
             }
         session.resume()
         let triggerTime = NSDate()
@@ -53,7 +45,6 @@ class ExpediaAPI {
         }
         if !done {
             session.cancel()
-//            completion(success: false, data: nil)
             done = true
         }
     }
