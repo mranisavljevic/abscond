@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class FlightDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class FlightDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, SFSafariViewControllerDelegate {
     
     class func identifier() -> String {
         return "FlightDetailViewController"
@@ -63,7 +64,13 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     @IBAction func buyButtonPressed(sender: UIButton) {
-        
+        guard let flight = self.flight else { return }
+        let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet()
+        guard let convertedUrl = flight.detailsUrl.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters), detailsUrl = NSURL(string: convertedUrl) else { return }
+        print(convertedUrl)
+        let safariVC = SFSafariViewController(URL: detailsUrl, entersReaderIfAvailable: true)
+        safariVC.delegate = self
+        self.presentViewController(safariVC, animated: true, completion: nil)
     }
     
     //MARK: UICollectionViewDelegate/Datasource
@@ -96,6 +103,10 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(collectionView.frame.width - 8.0, 100.0)
     }
+    
+//    func safariViewControllerDidFinish(controller: SFSafariViewController) {
+////        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
 
 }
 

@@ -35,11 +35,15 @@ class SearchViewController: UIViewController {
                             flightOffersTemp.appendContentsOf(flightOffers)
                             if i == 9 {
                                 let sortedOffers = flightOffersTemp.sort({ (flightA, flightB) -> Bool in
-                                    return flightA.formattedPrice < flightB.formattedPrice
+                                    let priceA = Double(flightA.formattedPrice.substringFromIndex(flightA.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: ""))
+                                    let priceB = Double(flightB.formattedPrice.substringFromIndex(flightB.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: ""))
+                                    guard let a = priceA, b = priceB else {
+                                        return flightA.formattedPrice < flightB.formattedPrice
+                                    }
+                                    return a < b
                                 })
                                 self.flightOfferResults = sortedOffers
                                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                                    print("Done")
                                     self.performSegueWithIdentifier("TableViewController", sender: self)
                                 })
                             }
