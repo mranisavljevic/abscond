@@ -38,14 +38,14 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.isSearching = false
-        self.searchingLabel.hidden = true
+        self.searchingLabel.alpha = 0.0
     }
     
     override func viewDidLayoutSubviews() {
         self.isSearching = true
         self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: 1000, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
         self.isSearching = false
-        self.searchingLabel.hidden = true
+//        self.searchingLabel.hidden = true
     }
     
     func setupCollectionView() {
@@ -368,14 +368,24 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.searchingLabel.hidden = false
         self.fetchResults()
     }
     
+    func animateSearchingLabel() {
+        if self.isSearching == true {
+            let currentAlpha = self.searchingLabel.alpha
+            UIView.animateWithDuration(1.0, animations: { () -> Void in
+                self.searchingLabel.alpha = currentAlpha == 0.0 ? 1.0 : 0.0
+                }, completion: { (finished) -> Void in
+                    self.animateSearchingLabel()
+            })
+        }
+    }
     
     func fetchResults() {
         if !self.isSearching {
             self.isSearching = true
+            self.animateSearchingLabel()
             self.spinner.startAnimating()
             let searchAirports = RandomAirportGenerator.tenRandomAirports(airports)
             airports = searchAirports.1
