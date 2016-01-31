@@ -17,7 +17,7 @@ class FlickerAPI {
         
         guard let escapedTerm = searchTerm.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()) else { return }
 
-                let URLString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&text=\(escapedTerm)&per_page=1&page=1&format=json&nojsoncallback=1"
+                let URLString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&text=\(escapedTerm)&accuracy=12&tags=city,downtown,bridge,monument,port,capital,skyline,attractions,street,view&per_page=1&page=1&format=json&nojsoncallback=1"
 
         guard let url = NSURL(string: URLString)  else { return  }
         let request = NSMutableURLRequest(URL: url)
