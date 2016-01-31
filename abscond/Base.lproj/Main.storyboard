@@ -9,6 +9,9 @@
         <mutableArray key="Capitals.dfont">
             <string>CapitalsRegular</string>
             <string>CapitalsRegular</string>
+            <string>CapitalsRegular</string>
+            <string>CapitalsRegular</string>
+            <string>CapitalsRegular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -125,7 +128,7 @@
         <!--Flight Detail View Controller-->
         <scene sceneID="FJJ-Kt-SuM">
             <objects>
-                <viewController storyboardIdentifier="FlightDetailViewController" id="eHp-Aw-AiR" customClass="FlightDetailViewController" customModule="abscond" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FlightDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="eHp-Aw-AiR" customClass="FlightDetailViewController" customModule="abscond" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PcV-vz-2cf"/>
                         <viewControllerLayoutGuide type="bottom" id="P2q-cK-4Hr"/>
@@ -134,8 +137,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-5G-Ica">
-                                <rect key="frame" x="20" y="165" width="560" height="207"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-5G-Ica">
+                                <rect key="frame" x="20" y="168" width="560" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6Z-OF-iBp">
                                     <size key="itemSize" width="50" height="50"/>
@@ -146,25 +149,30 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-8h-eLX">
-                                <rect key="frame" x="257" y="72" width="87" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="252" y="72" width="97" height="40"/>
+                                <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SEATS REMAINING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-fc-8iK">
-                                <rect key="frame" x="165" y="119" width="271" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEATS REMAINING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-fc-8iK">
+                                <rect key="frame" x="153" y="120" width="296" height="40"/>
+                                <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3F-sZ-65c">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3F-sZ-65c">
                                 <rect key="frame" x="200" y="380" width="200" height="200"/>
                                 <color key="backgroundColor" red="0.82842303299999998" green="0.91177850999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="dnF-oq-nTO"/>
                                     <constraint firstAttribute="width" constant="200" id="pc5-Vm-P5e"/>
                                 </constraints>
-                                <state key="normal" title="BUY"/>
+                                <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="32"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="BUY">
+                                    <color key="titleColor" red="1" green="0.82352941180000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buyButtonPressed:" destination="eHp-Aw-AiR" eventType="touchUpInside" id="bTJ-H7-VIw"/>
                                 </connections>

@@ -100,7 +100,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func getInfoForTenAirports() {
-//        NSOperationQueue().addOperationWithBlock { () -> Void in
+        NSOperationQueue().addOperationWithBlock { () -> Void in
 //            var isDone = false
             var completionCounter: Int = 0 {
                 didSet {
@@ -210,7 +210,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //                    }
 //                })
 //            }
-//        }
+        }
     }
     
     @IBAction func searchButtonPressed(sender: UIButton) {
