@@ -55,7 +55,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCHING FLIGHTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-go-Hiv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCHING FLIGHTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-go-Hiv">
                                 <rect key="frame" x="178.5" y="285" width="244.5" height="30"/>
                                 <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
