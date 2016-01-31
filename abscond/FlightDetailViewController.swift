@@ -22,6 +22,10 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     var flight: Flight?
     
+    var url: String?
+    
+    var destinationCity: String?
+    
     var flightSegments = [[String : AnyObject]]() {
         didSet {
             self.segmentCollectionView.reloadData()
@@ -39,6 +43,7 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupShareButton()
         self.buyButton.layer.cornerRadius = self.buyButton.frame.size.width / 2
         self.buyButton.layer.opacity = 0.6
         self.segmentCollectionView.delegate = self
@@ -46,8 +51,13 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
         let nib = UINib(nibName: "FlightDetailCollectionViewCell", bundle: nil)
         self.segmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "FlightDetailCollectionViewCell")
         if let flight = self.flight {
+            BitlyAPI.shortenURL(flight.detailsUrl, completion: { (success, newURL) -> () in
+                self.url = newURL
+            })
+            self.destinationCity = flight.legs[0].flightSegments.last!.arrivalAirportLocation
+            self.navigationItem.title = self.destinationCity
             self.viewModel = FlightDetailViewModel(flight: flight)
-            FlickerAPI.searchFlickrByTerm(flight.legs[0].flightSegments.last!.arrivalAirportLocation) { (success, data) -> () in
+            FlickerAPI.searchFlickrByTerm(self.destinationCity!) { (success, data) -> () in
                 if success {
                     print(data)
                     if let data = data {
@@ -82,6 +92,17 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
         let safariVC = SFSafariViewController(URL: detailsUrl, entersReaderIfAvailable: true)
         safariVC.delegate = self
         self.presentViewController(safariVC, animated: true, completion: nil)
+    }
+    
+    func setupShareButton() {
+        let shareBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action:"shareButtonPressed:")
+        self.navigationItem.rightBarButtonItem = shareBarButton
+    }
+    
+    @IBAction func shareButtonPressed(sender: UIBarButtonItem) {
+        let justTheCity = self.destinationCity!.componentsSeparatedByString(",")
+        let activityVC = UIActivityViewController(activityItems: ["Ready for a trip? Next weekend, let's fly to \(justTheCity[0]) for \(self.priceLabel.text!)! \(self.url!)" as String], applicationActivities: nil)
+        presentViewController(activityVC, animated: true, completion: nil)
     }
     
     //MARK: UICollectionViewDelegate/Datasource
