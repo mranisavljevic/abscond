@@ -33,6 +33,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewWillAppear(animated)
         self.isSearching = false
         self.searchingLabel.hidden = true
+//        self.setUpMaskImage()
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,6 +41,17 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: 1000, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
         self.isSearching = false
         self.searchingLabel.hidden = true
+    }
+    
+    func setUpMaskImage() {
+        let frame = CGRectMake(self.collectionView.layer.frame.origin.x, self.collectionView.layer.frame.origin.y, self.collectionView.layer.frame.size.width, self.collectionView.layer.frame.size.height)
+        let imageView = UIImageView(frame: frame)
+//        imageView.backgroundColor = imageView.backgroundColor!.colorWithAlphaComponent(0.0)
+        imageView.center = self.collectionView.center
+        guard let image = UIImage(named: "WorldMask.png") else { return }
+        imageView.image = image
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.view.addSubview(imageView)
     }
     
     func setupCollectionView() {

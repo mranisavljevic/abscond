@@ -24,8 +24,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPIN THE GLOBE!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmv-Ul-ZYx">
-                                <rect key="frame" x="160" y="84" width="280" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="SPIN THE GLOBE!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmv-Ul-ZYx">
+                                <rect key="frame" x="160.5" y="164" width="279.5" height="41"/>
                                 <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="32"/>
                                 <color key="textColor" red="1" green="0.82352941180000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCi-8O-64t">
-                                <rect key="frame" x="0.0" y="206" width="600" height="394"/>
+                                <rect key="frame" x="0.0" y="362" width="600" height="238"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yAk-TZ-CCl">
                                     <size key="itemSize" width="560" height="376"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -53,21 +53,28 @@
                                 </cells>
                             </collectionView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCHING FLIGHTS..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-go-Hiv">
-                                <rect key="frame" x="166" y="149" width="269" height="30"/>
+                                <rect key="frame" x="166.5" y="305" width="268.5" height="30"/>
                                 <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="WorldMaskYellow.png" translatesAutoresizingMaskIntoConstraints="NO" id="mGa-MC-1Uf">
+                                <rect key="frame" x="0.0" y="362" width="600" height="238"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fmv-Ul-ZYx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="46S-QJ-9i5"/>
+                            <constraint firstItem="mGa-MC-1Uf" firstAttribute="trailing" secondItem="uCi-8O-64t" secondAttribute="trailing" id="2Nq-eS-jgL"/>
+                            <constraint firstItem="Fmv-Ul-ZYx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="46S-QJ-9i5"/>
                             <constraint firstItem="uCi-8O-64t" firstAttribute="top" secondItem="lOM-go-Hiv" secondAttribute="bottom" constant="27" id="PPr-Az-Jga"/>
                             <constraint firstItem="lOM-go-Hiv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZCv-9C-BrT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uCi-8O-64t" secondAttribute="bottom" id="ZSC-Cu-P6C"/>
                             <constraint firstItem="uCi-8O-64t" firstAttribute="top" secondItem="Fmv-Ul-ZYx" secondAttribute="bottom" constant="64" id="aKn-LZ-Go5"/>
+                            <constraint firstItem="mGa-MC-1Uf" firstAttribute="top" secondItem="uCi-8O-64t" secondAttribute="top" id="fCf-fp-4eo"/>
+                            <constraint firstItem="mGa-MC-1Uf" firstAttribute="leading" secondItem="uCi-8O-64t" secondAttribute="leading" id="gvO-2f-Ln2"/>
                             <constraint firstAttribute="trailing" secondItem="uCi-8O-64t" secondAttribute="trailing" id="khg-bE-Gvf"/>
-                            <constraint firstItem="lOM-go-Hiv" firstAttribute="top" secondItem="Fmv-Ul-ZYx" secondAttribute="bottom" constant="24" id="mUk-BB-dD4"/>
+                            <constraint firstItem="lOM-go-Hiv" firstAttribute="top" secondItem="Fmv-Ul-ZYx" secondAttribute="bottom" constant="100" id="mUk-BB-dD4"/>
+                            <constraint firstItem="mGa-MC-1Uf" firstAttribute="bottom" secondItem="uCi-8O-64t" secondAttribute="bottom" id="nSG-UY-C1j"/>
                             <constraint firstItem="Fmv-Ul-ZYx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ovy-i5-Ryd"/>
                             <constraint firstItem="uCi-8O-64t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vy0-f7-j35"/>
                         </constraints>
@@ -134,7 +141,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-5G-Ica">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-5G-Ica">
                                 <rect key="frame" x="20" y="165" width="560" height="207"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6Z-OF-iBp">
@@ -151,7 +158,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SEATS REMAINING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-fc-8iK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEATS REMAINING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-fc-8iK">
                                 <rect key="frame" x="165" y="119" width="271" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,4 +221,7 @@
             <point key="canvasLocation" x="441" y="235"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="WorldMaskYellow.png" width="510" height="300"/>
+    </resources>
 </document>
