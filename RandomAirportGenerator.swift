@@ -16,10 +16,9 @@ class RandomAirportGenerator {
         var arrivalAirports = [String]()
 
         for _ in 1...10 {
-        let randomIndex = Int(arc4random_uniform(UInt32(airports.count - 1)))
-        arrivalAirports.append(airports[randomIndex])
-        airportsToPickFrom.removeAtIndex(randomIndex)
-        
+            let randomIndex = Int(arc4random_uniform(UInt32(airports.count - 1))) % airports.count
+            arrivalAirports.append(airports[randomIndex])
+            airportsToPickFrom.removeAtIndex(randomIndex)
         }
     return (arrivalAirports, airportsToPickFrom)
     }

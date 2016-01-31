@@ -100,6 +100,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.nextWeekendDates.end = nextWeekendEndFormatted
     }
     
+<<<<<<< HEAD
 //    func getInfoForTenAirports() {
 ////        NSOperationQueue().addOperationWithBlock { () -> Void in
 ////            var isDone = false
@@ -218,6 +219,23 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func getInfoForTenAirportsCopy(index: Int, completion:(flights: [Flight]?)->()) {
         dispatch_async(queue) { () -> Void in
+=======
+    func getInfoForTenAirports() {
+        NSOperationQueue().addOperationWithBlock { () -> Void in
+//            var isDone = false
+            var completionCounter: Int = 0 {
+                didSet {
+//                    print(completionCounter)
+//                    if completionCounter >= 10 && !isDone {
+//                        isDone = true
+//                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+//                            self.performSegueWithIdentifier("TableViewController", sender: self)
+//                        })
+//                    }
+                    print("\(completionCounter) completed")
+                }
+            }
+>>>>>>> master
             var flightOffersTemp = [Flight]()
             print("Searching: \(self.tenRandomAirports[index])")
             ExpediaAPI.searchFlights(self.tenRandomAirports[index], departureDate: self.nextWeekendDates.start, returnDate: self.nextWeekendDates.end, completion: { (success, data) -> () in
@@ -280,10 +298,21 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //                                completion(flights: nil)
 //                            }
 //                        }
+<<<<<<< HEAD
 //                    })
 //                }
             }
 
+=======
+//                    } else {
+//                        print("error")
+//                        completionCounter++
+//                    }
+//                })
+//            }
+        }
+    }
+>>>>>>> master
     
     @IBAction func searchButtonPressed(sender: UIButton) {
         

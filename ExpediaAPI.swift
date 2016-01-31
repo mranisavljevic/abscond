@@ -20,36 +20,31 @@ class ExpediaAPI {
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "GET"
         let session = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
-            if let _ = error {
-                if let response = response as? NSHTTPURLResponse {
-                    print("Error with code: \(response.statusCode)")
+            if let error = error {
+                print(error.localizedFailureReason)
+                if let urlResponse = response as? NSHTTPURLResponse {
+                    print("Error with code: \(urlResponse.statusCode)")
+                } else {
+                    print(response)
                 }
+                
             }
             if let data = data {
                 completion(success: true, data: data)
                 done = true
-//                print("The data is: \(data)")
             } else {
                 completion(success: false, data: nil)
                 done = true
             }
-//            if let _ = error {
-//                if let response = response as? NSHTTPURLResponse {
-//                    completion(success: false, data: nil)
-//                    done = true
-//                }
-//            }
-//            print("Done Searching")
             }
         session.resume()
         let triggerTime = NSDate()
-        let interval = 5.0
+        let interval = 25.0
         while NSDate().timeIntervalSinceDate(triggerTime) < interval {
             
         }
         if !done {
             session.cancel()
-            completion(success: false, data: nil)
             done = true
         }
     }

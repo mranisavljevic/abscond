@@ -18,11 +18,11 @@
 		5860FB9A1C5DD6DF0076A531 /* FlickrJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB981C5DD6DF0076A531 /* FlickrJSONService.swift */; };
 		5860FB9C1C5DD7BE0076A531 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB9B1C5DD7BE0076A531 /* Photo.swift */; };
 		9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015CB651C5C7AA800D10479 /* FlightSegment.swift */; };
-		904506611C5DA9E9001C58D8 /* WorldMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 9045065E1C5DA9E9001C58D8 /* WorldMask.png */; };
-		904506621C5DA9E9001C58D8 /* WorldMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9045065F1C5DA9E9001C58D8 /* WorldMask@2x.png */; };
-		904506631C5DA9E9001C58D8 /* WorldMask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 904506601C5DA9E9001C58D8 /* WorldMask@3x.png */; };
 		9069966E1C5D4659006ED958 /* FlightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */; };
 		9069966F1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9069966D1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib */; };
+		9073EC591C5E7B6600E3283B /* WorldMaskYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9073EC561C5E7B6600E3283B /* WorldMaskYellow.png */; };
+		9073EC5A1C5E7B6600E3283B /* WorldMaskYellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9073EC571C5E7B6600E3283B /* WorldMaskYellow@2x.png */; };
+		9073EC5B1C5E7B6600E3283B /* WorldMaskYellow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9073EC581C5E7B6600E3283B /* WorldMaskYellow@3x.png */; };
 		907ACE2B1C5C4E6200CF1763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */; };
 		907ACE301C5C4E6200CF1763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907ACE2E1C5C4E6200CF1763 /* Main.storyboard */; };
 		907ACE331C5C4E6200CF1763 /* abscond.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 907ACE311C5C4E6200CF1763 /* abscond.xcdatamodeld */; };
@@ -60,11 +60,11 @@
 		5860FB981C5DD6DF0076A531 /* FlickrJSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrJSONService.swift; sourceTree = "<group>"; };
 		5860FB9B1C5DD7BE0076A531 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9015CB651C5C7AA800D10479 /* FlightSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSegment.swift; sourceTree = "<group>"; };
-		9045065E1C5DA9E9001C58D8 /* WorldMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorldMask.png; sourceTree = "<group>"; };
-		9045065F1C5DA9E9001C58D8 /* WorldMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WorldMask@2x.png"; sourceTree = "<group>"; };
-		904506601C5DA9E9001C58D8 /* WorldMask@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WorldMask@3x.png"; sourceTree = "<group>"; };
 		9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		9069966D1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		9073EC561C5E7B6600E3283B /* WorldMaskYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorldMaskYellow.png; sourceTree = "<group>"; };
+		9073EC571C5E7B6600E3283B /* WorldMaskYellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WorldMaskYellow@2x.png"; sourceTree = "<group>"; };
+		9073EC581C5E7B6600E3283B /* WorldMaskYellow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WorldMaskYellow@3x.png"; sourceTree = "<group>"; };
 		907ACE271C5C4E6200CF1763 /* abscond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abscond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907ACE2A1C5C4E6200CF1763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		907ACE2F1C5C4E6200CF1763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,9 +173,9 @@
 		907ACE4D1C5C4E8800CF1763 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9045065E1C5DA9E9001C58D8 /* WorldMask.png */,
-				9045065F1C5DA9E9001C58D8 /* WorldMask@2x.png */,
-				904506601C5DA9E9001C58D8 /* WorldMask@3x.png */,
+				9073EC561C5E7B6600E3283B /* WorldMaskYellow.png */,
+				9073EC571C5E7B6600E3283B /* WorldMaskYellow@2x.png */,
+				9073EC581C5E7B6600E3283B /* WorldMaskYellow@3x.png */,
 				5860FB911C5DA73B0076A531 /* Capitals.dfont */,
 				907ACE341C5C4E6200CF1763 /* Assets.xcassets */,
 				907ACE361C5C4E6200CF1763 /* LaunchScreen.storyboard */,
@@ -295,14 +295,14 @@
 			files = (
 				5860FB921C5DA82F0076A531 /* Capitals.dfont in Resources */,
 				5860FB901C5D77290076A531 /* map.png in Resources */,
-				904506621C5DA9E9001C58D8 /* WorldMask@2x.png in Resources */,
-				904506611C5DA9E9001C58D8 /* WorldMask.png in Resources */,
 				907ACE381C5C4E6200CF1763 /* LaunchScreen.storyboard in Resources */,
 				5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */,
-				904506631C5DA9E9001C58D8 /* WorldMask@3x.png in Resources */,
+				9073EC5B1C5E7B6600E3283B /* WorldMaskYellow@3x.png in Resources */,
 				907ACE351C5C4E6200CF1763 /* Assets.xcassets in Resources */,
 				9069966F1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib in Resources */,
+				9073EC591C5E7B6600E3283B /* WorldMaskYellow.png in Resources */,
 				907ACE301C5C4E6200CF1763 /* Main.storyboard in Resources */,
+				9073EC5A1C5E7B6600E3283B /* WorldMaskYellow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
