@@ -61,7 +61,6 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
         guard let flight = self.flight else { return }
         let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet()
         guard let convertedUrl = flight.detailsUrl.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters), detailsUrl = NSURL(string: convertedUrl) else { return }
-        print(convertedUrl)
         let safariVC = SFSafariViewController(URL: detailsUrl, entersReaderIfAvailable: true)
         safariVC.delegate = self
         self.presentViewController(safariVC, animated: true, completion: nil)

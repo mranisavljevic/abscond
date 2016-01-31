@@ -18,9 +18,11 @@ class TableViewCell: UITableViewCell {
         didSet {
             self.formatDates()
             self.priceLabel.text = self.flight!.formattedPrice
-            
-            let fullDestination = self.flight!.legs[0].flightSegments[0].arrivalAirportLocation
-            let splitDestination = fullDestination.componentsSeparatedByString(",")
+            guard let flight = self.flight, finalDestinationSegment = flight.legs[0].flightSegments.last else { return }
+            let splitDestination = finalDestinationSegment.arrivalAirportLocation.componentsSeparatedByString(",")
+//            let finalDestinationSegment = self.flight?.legs[0].flightSegments.last
+//            let fullDestination = self.flight!.legs[0].flightSegments.last.arrivalAirportLocation
+//            let splitDestination = fullDestination.componentsSeparatedByString(",")
             self.destinationLabel.text = splitDestination[0]
         }
     }
