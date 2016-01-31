@@ -32,6 +32,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.setupCollectionView()
         self.spinner.hidesWhenStopped = true
         self.spinner.color = UIColor(colorLiteralRed: 0.0, green: 53.0 / 255.0, blue: 95.0 / 255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = kExpediaBlue
     }
     
     override func viewWillAppear(animated: Bool) {
