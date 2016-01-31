@@ -12,6 +12,7 @@
 		5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB891C5C70CE0076A531 /* TableViewCell.xib */; };
 		5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */; };
 		5860FB8E1C5D350A0076A531 /* BitlyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */; };
+		5860FB901C5D77290076A531 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB8F1C5D77280076A531 /* map.png */; };
 		9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015CB651C5C7AA800D10479 /* FlightSegment.swift */; };
 		9069966E1C5D4659006ED958 /* FlightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */; };
 		9069966F1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9069966D1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib */; };
@@ -46,6 +47,7 @@
 		5860FB891C5C70CE0076A531 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitlyAPI.swift; sourceTree = "<group>"; };
+		5860FB8F1C5D77280076A531 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		9015CB651C5C7AA800D10479 /* FlightSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSegment.swift; sourceTree = "<group>"; };
 		9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		9069966D1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightDetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				907ACE341C5C4E6200CF1763 /* Assets.xcassets */,
 				907ACE361C5C4E6200CF1763 /* LaunchScreen.storyboard */,
 				907ACE391C5C4E6200CF1763 /* Info.plist */,
+				5860FB8F1C5D77280076A531 /* map.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5860FB901C5D77290076A531 /* map.png in Resources */,
 				907ACE381C5C4E6200CF1763 /* LaunchScreen.storyboard in Resources */,
 				5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */,
 				907ACE351C5C4E6200CF1763 /* Assets.xcassets in Resources */,
