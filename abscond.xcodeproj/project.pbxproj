@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5833E8E61C5E9BEE00E96E09 /* Icon29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5833E8E01C5E9BEE00E96E09 /* Icon29@2x.png */; };
+		5833E8E71C5E9BEE00E96E09 /* Icon29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5833E8E11C5E9BEE00E96E09 /* Icon29@3x.png */; };
+		5833E8E81C5E9BEE00E96E09 /* Icon40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5833E8E21C5E9BEE00E96E09 /* Icon40@2x.png */; };
+		5833E8E91C5E9BEE00E96E09 /* Icon40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5833E8E31C5E9BEE00E96E09 /* Icon40@3x.png */; };
+		5833E8EA1C5E9BEE00E96E09 /* Icon60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5833E8E41C5E9BEE00E96E09 /* Icon60@2x.png */; };
+		5833E8EB1C5E9BEE00E96E09 /* Icon60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5833E8E51C5E9BEE00E96E09 /* Icon60@3x.png */; };
 		5860FB851C5C64BE0076A531 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB841C5C64BE0076A531 /* TableViewController.swift */; };
 		5860FB871C5C65030076A531 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB861C5C65030076A531 /* SearchViewController.swift */; };
 		5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB891C5C70CE0076A531 /* TableViewCell.xib */; };
@@ -49,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5833E8E01C5E9BEE00E96E09 /* Icon29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon29@2x.png"; sourceTree = "<group>"; };
+		5833E8E11C5E9BEE00E96E09 /* Icon29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon29@3x.png"; sourceTree = "<group>"; };
+		5833E8E21C5E9BEE00E96E09 /* Icon40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon40@2x.png"; sourceTree = "<group>"; };
+		5833E8E31C5E9BEE00E96E09 /* Icon40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon40@3x.png"; sourceTree = "<group>"; };
+		5833E8E41C5E9BEE00E96E09 /* Icon60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon60@2x.png"; sourceTree = "<group>"; };
+		5833E8E51C5E9BEE00E96E09 /* Icon60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon60@3x.png"; sourceTree = "<group>"; };
 		5860FB841C5C64BE0076A531 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5860FB861C5C65030076A531 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5860FB891C5C70CE0076A531 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -173,6 +185,12 @@
 		907ACE4D1C5C4E8800CF1763 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5833E8E01C5E9BEE00E96E09 /* Icon29@2x.png */,
+				5833E8E11C5E9BEE00E96E09 /* Icon29@3x.png */,
+				5833E8E21C5E9BEE00E96E09 /* Icon40@2x.png */,
+				5833E8E31C5E9BEE00E96E09 /* Icon40@3x.png */,
+				5833E8E41C5E9BEE00E96E09 /* Icon60@2x.png */,
+				5833E8E51C5E9BEE00E96E09 /* Icon60@3x.png */,
 				9073EC561C5E7B6600E3283B /* WorldMaskYellow.png */,
 				9073EC571C5E7B6600E3283B /* WorldMaskYellow@2x.png */,
 				9073EC581C5E7B6600E3283B /* WorldMaskYellow@3x.png */,
@@ -293,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5833E8E91C5E9BEE00E96E09 /* Icon40@3x.png in Resources */,
 				5860FB921C5DA82F0076A531 /* Capitals.dfont in Resources */,
 				5860FB901C5D77290076A531 /* map.png in Resources */,
 				907ACE381C5C4E6200CF1763 /* LaunchScreen.storyboard in Resources */,
@@ -300,8 +319,13 @@
 				9073EC5B1C5E7B6600E3283B /* WorldMaskYellow@3x.png in Resources */,
 				907ACE351C5C4E6200CF1763 /* Assets.xcassets in Resources */,
 				9069966F1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib in Resources */,
+				5833E8E71C5E9BEE00E96E09 /* Icon29@3x.png in Resources */,
 				9073EC591C5E7B6600E3283B /* WorldMaskYellow.png in Resources */,
+				5833E8EB1C5E9BEE00E96E09 /* Icon60@3x.png in Resources */,
 				907ACE301C5C4E6200CF1763 /* Main.storyboard in Resources */,
+				5833E8E81C5E9BEE00E96E09 /* Icon40@2x.png in Resources */,
+				5833E8E61C5E9BEE00E96E09 /* Icon29@2x.png in Resources */,
+				5833E8EA1C5E9BEE00E96E09 /* Icon60@2x.png in Resources */,
 				9073EC5A1C5E7B6600E3283B /* WorldMaskYellow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
