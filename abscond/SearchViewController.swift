@@ -84,7 +84,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func getInfoForTenAirports() {
         var counter: Int = 0 {
             didSet {
-//                print(counter)
+                print(counter)
                 if counter == 10 {
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         self.performSegueWithIdentifier("TableViewController", sender: self)
@@ -107,9 +107,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                                 return a.formattedPrice < b.formattedPrice
                             })
                             if sorted.count >= 2 {
-//                                print("Adding \(self.tenRandomAirports[i]): \(sorted[0].formattedPrice) & \(sorted[1].formattedPrice)")
+                                print("Adding \(self.tenRandomAirports[i]): \(sorted[0].formattedPrice) & \(sorted[1].formattedPrice)")
                                 flightOffersTemp.append(sorted[0])
                                 flightOffersTemp.append(sorted[1])
+                                counter = i == 9 ? counter : counter + 1
                             }
                             if i == 9 {
                                 let sortedOffers = flightOffersTemp.sort({ (flightA, flightB) -> Bool in
@@ -121,9 +122,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                                     return a < b
                                 })
                                 self.flightOfferResults = sortedOffers
+                                counter++
                             }
                         }
-                        counter++
                     } else {
                         print("No data returned for airport: \(self.tenRandomAirports[i])")
                         counter++
