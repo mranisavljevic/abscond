@@ -33,6 +33,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.spinner.hidesWhenStopped = true
         self.spinner.color = UIColor(colorLiteralRed: 0.0, green: 53.0 / 255.0, blue: 95.0 / 255.0, alpha: 1.0)
         self.navigationController?.navigationBar.tintColor = kExpediaBlue
+        self.navigationController?.navigationBarHidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -374,8 +375,12 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func animateSearchingLabel() {
         if self.isSearching == true {
             let currentAlpha = self.searchingLabel.alpha
+//            let currentGlobePosition = self.collectionView.indexPathsForVisibleItems()
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 self.searchingLabel.alpha = currentAlpha == 0.0 ? 1.0 : 0.0
+//                if let first = currentGlobePosition.first {
+//                    self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: first.row + 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
+//                }
                 }, completion: { (finished) -> Void in
                     self.animateSearchingLabel()
             })
