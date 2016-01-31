@@ -5,6 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Capitals.dfont">
+            <string>CapitalsRegular</string>
+            <string>CapitalsRegular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -18,62 +24,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Do4-Im-GYC">
-                                <rect key="frame" x="254" y="280" width="93" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="SEARCH"/>
-                                <connections>
-                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgX-Pu-SPD"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHERE TO?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmv-Ul-ZYx">
-                                <rect key="frame" x="253" y="72" width="94" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPIN THE GLOBE!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmv-Ul-ZYx">
+                                <rect key="frame" x="160" y="84" width="280" height="41"/>
+                                <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="32"/>
+                                <color key="textColor" red="0.92941176470588238" green="0.55294117647058827" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.29803921568627451" green="0.16078431372549018" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCi-8O-64t">
-                                <rect key="frame" x="0.0" y="329" width="600" height="271"/>
+                                <rect key="frame" x="0.0" y="206" width="600" height="394"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yAk-TZ-CCl">
-                                    <size key="itemSize" width="560" height="252"/>
+                                    <size key="itemSize" width="560" height="376"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="Map" id="gS9-2Z-wLQ">
-                                        <rect key="frame" x="20" y="0.0" width="560" height="252"/>
+                                        <rect key="frame" x="20" y="0.0" width="560" height="376"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="252"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="376"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCHING FLIGHTS..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-go-Hiv">
+                                <rect key="frame" x="166" y="149" width="269" height="30"/>
+                                <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="24"/>
+                                <color key="textColor" red="0.57647058819999997" green="0.33725490200000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fmv-Ul-ZYx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="46S-QJ-9i5"/>
-                            <constraint firstItem="Do4-Im-GYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OEs-Cq-Kef"/>
-                            <constraint firstItem="Do4-Im-GYC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OUe-DI-57l"/>
+                            <constraint firstItem="Fmv-Ul-ZYx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="46S-QJ-9i5"/>
+                            <constraint firstItem="uCi-8O-64t" firstAttribute="top" secondItem="lOM-go-Hiv" secondAttribute="bottom" constant="27" id="PPr-Az-Jga"/>
+                            <constraint firstItem="lOM-go-Hiv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZCv-9C-BrT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uCi-8O-64t" secondAttribute="bottom" id="ZSC-Cu-P6C"/>
+                            <constraint firstItem="uCi-8O-64t" firstAttribute="top" secondItem="Fmv-Ul-ZYx" secondAttribute="bottom" constant="64" id="aKn-LZ-Go5"/>
                             <constraint firstAttribute="trailing" secondItem="uCi-8O-64t" secondAttribute="trailing" id="khg-bE-Gvf"/>
+                            <constraint firstItem="lOM-go-Hiv" firstAttribute="top" secondItem="Fmv-Ul-ZYx" secondAttribute="bottom" constant="24" id="mUk-BB-dD4"/>
                             <constraint firstItem="Fmv-Ul-ZYx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ovy-i5-Ryd"/>
                             <constraint firstItem="uCi-8O-64t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vy0-f7-j35"/>
-                            <constraint firstItem="uCi-8O-64t" firstAttribute="top" secondItem="Do4-Im-GYC" secondAttribute="bottom" constant="8" id="wI9-go-f6b"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aKn-LZ-Go5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="mht-Cg-MXI"/>
                     <connections>
                         <outlet property="collectionView" destination="uCi-8O-64t" id="U8f-jz-VKn"/>
+                        <outlet property="searchingLabel" destination="lOM-go-Hiv" id="OsH-5a-GM0"/>
                         <segue destination="fsD-MP-YrK" kind="show" identifier="TableViewController" id="Pa2-lC-5Qk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="235"/>
+            <point key="canvasLocation" x="1096" y="235"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="9EA-fz-yUF">
@@ -121,7 +134,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-5G-Ica">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-5G-Ica">
                                 <rect key="frame" x="20" y="165" width="560" height="207"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6Z-OF-iBp">
@@ -133,13 +146,13 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-8h-eLX">
-                                <rect key="frame" x="256.5" y="72" width="87" height="38.5"/>
+                                <rect key="frame" x="257" y="72" width="87" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEATS REMAINING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-fc-8iK">
-                                <rect key="frame" x="165" y="118.5" width="270.5" height="38.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SEATS REMAINING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-fc-8iK">
+                                <rect key="frame" x="165" y="119" width="271" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

@@ -13,6 +13,7 @@
 		5860FB8C1C5C72AD0076A531 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */; };
 		5860FB8E1C5D350A0076A531 /* BitlyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */; };
 		5860FB901C5D77290076A531 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB8F1C5D77280076A531 /* map.png */; };
+		5860FB921C5DA82F0076A531 /* Capitals.dfont in Resources */ = {isa = PBXBuildFile; fileRef = 5860FB911C5DA73B0076A531 /* Capitals.dfont */; };
 		9015CB661C5C7AA800D10479 /* FlightSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015CB651C5C7AA800D10479 /* FlightSegment.swift */; };
 		9069966E1C5D4659006ED958 /* FlightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */; };
 		9069966F1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9069966D1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib */; };
@@ -48,6 +49,7 @@
 		5860FB8B1C5C72AD0076A531 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		5860FB8D1C5D350A0076A531 /* BitlyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitlyAPI.swift; sourceTree = "<group>"; };
 		5860FB8F1C5D77280076A531 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		5860FB911C5DA73B0076A531 /* Capitals.dfont */ = {isa = PBXFileReference; lastKnownFileType = file; path = Capitals.dfont; sourceTree = "<group>"; };
 		9015CB651C5C7AA800D10479 /* FlightSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSegment.swift; sourceTree = "<group>"; };
 		9069966C1C5D4658006ED958 /* FlightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		9069966D1C5D4659006ED958 /* FlightDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightDetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		907ACE4D1C5C4E8800CF1763 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5860FB911C5DA73B0076A531 /* Capitals.dfont */,
 				907ACE341C5C4E6200CF1763 /* Assets.xcassets */,
 				907ACE361C5C4E6200CF1763 /* LaunchScreen.storyboard */,
 				907ACE391C5C4E6200CF1763 /* Info.plist */,
@@ -272,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5860FB921C5DA82F0076A531 /* Capitals.dfont in Resources */,
 				5860FB901C5D77290076A531 /* map.png in Resources */,
 				907ACE381C5C4E6200CF1763 /* LaunchScreen.storyboard in Resources */,
 				5860FB8A1C5C70CE0076A531 /* TableViewCell.xib in Resources */,
