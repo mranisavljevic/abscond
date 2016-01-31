@@ -368,10 +368,15 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.searchingLabel.hidden = false
+        self.fetchResults()
+    }
+    
+    
+    func fetchResults() {
         if !self.isSearching {
             self.isSearching = true
             self.spinner.startAnimating()
-            self.searchingLabel.hidden = false
             let searchAirports = RandomAirportGenerator.tenRandomAirports(airports)
             airports = searchAirports.1
             tenRandomAirports = searchAirports.0
@@ -385,10 +390,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                     }
                 })
             }
-//            getInfoForTenAirports()
         }
-
-
     }
+    
     
 }
