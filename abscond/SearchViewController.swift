@@ -82,58 +82,63 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func getInfoForTenAirports() {
-        var counter: Int = 0 {
-            didSet {
-                print(counter)
-                if counter == 10 {
-                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                        self.performSegueWithIdentifier("TableViewController", sender: self)
-                    })
+        NSOperationQueue().addOperationWithBlock { () -> Void in
+            var isDone = false
+            var counter: Int = 0 {
+                didSet {
+                    print(counter)
+                    if counter >= 10 && !isDone {
+                        isDone = true
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                            self.performSegueWithIdentifier("TableViewController", sender: self)
+                        })
+                    }
                 }
             }
-        }
-        var flightOffersTemp = [Flight]()
-        for i in 0...9 {
-//            print("Searching \(self.tenRandomAirports[i])")
-            ExpediaAPI.searchFlights(tenRandomAirports[i], departureDate: self.nextWeekendDates.start, returnDate: self.nextWeekendDates.end, completion: { (success, data) -> () in
-                if success {
-                    if let data = data {
-                        if let  flightOffers = JSONService.parseFlightSearchJSON(data) {
-                            self.flightOfferResults = flightOffers
-                            let sorted = flightOffers.sort({ (a, b) -> Bool in
-                                if let priceA = Double(a.formattedPrice.substringFromIndex(a.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: "")), priceB = Double(b.formattedPrice.substringFromIndex(b.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: "")) {
-                                    return priceA < priceB
-                                }
-                                return a.formattedPrice < b.formattedPrice
-                            })
-                            if sorted.count >= 2 {
-                                print("Adding \(self.tenRandomAirports[i]): \(sorted[0].formattedPrice) & \(sorted[1].formattedPrice)")
-                                flightOffersTemp.append(sorted[0])
-                                flightOffersTemp.append(sorted[1])
-                                counter = i == 9 ? counter : counter + 1
-                            }
-                            if i == 9 {
-                                let sortedOffers = flightOffersTemp.sort({ (flightA, flightB) -> Bool in
-                                    let priceA = Double(flightA.formattedPrice.substringFromIndex(flightA.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: ""))
-                                    let priceB = Double(flightB.formattedPrice.substringFromIndex(flightB.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: ""))
-                                    guard let a = priceA, b = priceB else {
-                                        return flightA.formattedPrice < flightB.formattedPrice
+            var flightOffersTemp = [Flight]()
+            for i in 0...9 {
+                print("Searching \(self.tenRandomAirports[i])")
+                ExpediaAPI.searchFlights(self.tenRandomAirports[i], departureDate: self.nextWeekendDates.start, returnDate: self.nextWeekendDates.end, completion: { (success, data) -> () in
+                    if success {
+                        if let data = data {
+                            if let  flightOffers = JSONService.parseFlightSearchJSON(data) {
+                                self.flightOfferResults = flightOffers
+                                let sorted = flightOffers.sort({ (a, b) -> Bool in
+                                    if let priceA = Double(a.formattedPrice.substringFromIndex(a.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: "")), priceB = Double(b.formattedPrice.substringFromIndex(b.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: "")) {
+                                        return priceA < priceB
                                     }
-                                    return a < b
+                                    return a.formattedPrice < b.formattedPrice
                                 })
-                                self.flightOfferResults = sortedOffers
-                                counter++
+                                if sorted.count >= 2 {
+                                    print("Adding \(self.tenRandomAirports[i]): \(sorted[0].formattedPrice) & \(sorted[1].formattedPrice)")
+                                    flightOffersTemp.append(sorted[0])
+                                    flightOffersTemp.append(sorted[1])
+                                    counter = counter == 9 ? counter : counter + 1
+                                }
+                                print("Index being searched: \(i)")
+                                if counter >= 10 {
+                                    let sortedOffers = flightOffersTemp.sort({ (flightA, flightB) -> Bool in
+                                        let priceA = Double(flightA.formattedPrice.substringFromIndex(flightA.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: ""))
+                                        let priceB = Double(flightB.formattedPrice.substringFromIndex(flightB.formattedPrice.startIndex.advancedBy(1)).stringByReplacingOccurrencesOfString(",", withString: ""))
+                                        guard let a = priceA, b = priceB else {
+                                            return flightA.formattedPrice < flightB.formattedPrice
+                                        }
+                                        return a < b
+                                    })
+                                    self.flightOfferResults = sortedOffers
+                                    counter++
+                                }
                             }
+                        } else {
+                            print("No data returned for airport: \(self.tenRandomAirports[i])")
+                            counter++
                         }
                     } else {
-                        print("No data returned for airport: \(self.tenRandomAirports[i])")
+                        print("error")
                         counter++
                     }
-                } else {
-                    print("error")
-                    counter++
-                }
-            })
+                })
+            }
         }
     }
     
