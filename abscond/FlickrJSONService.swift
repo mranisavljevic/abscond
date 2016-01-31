@@ -16,8 +16,8 @@ class FlickrJSONService {
             
             guard let resultsDictionary = try NSJSONSerialization.JSONObjectWithData(JSON, options: .MutableContainers) as? [String : AnyObject] else { return nil }
             
-            guard let status = resultsDictionary["stat"] as? String else { return nil }
-            print("The status of the call is \(status)")
+            guard let _ = resultsDictionary["stat"] as? String else { return nil }
+//            print("The status of the call is \(status)")
             guard let photosDictionary = resultsDictionary["photos"] as? [String: AnyObject] else { return nil }
             guard let photosReceived = photosDictionary["photo"] as? [[String: AnyObject]] else { return nil }
             var photos = [Photo]()

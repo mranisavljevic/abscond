@@ -24,10 +24,15 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var searchingLabel: UILabel!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getNextWeekendDates()
         self.setupCollectionView()
+        self.spinner.hidesWhenStopped = true
+        self.spinner.color = UIColor(colorLiteralRed: 0.0, green: 53.0 / 255.0, blue: 95.0 / 255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = kExpediaBlue
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -285,24 +290,24 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             }
 
     
-    @IBAction func searchButtonPressed(sender: UIButton) {
-        
-        let searchAirports = RandomAirportGenerator.tenRandomAirports(airports)
-        airports = searchAirports.1
-        tenRandomAirports = searchAirports.0
-        for i in 0...9 {
-            self.getInfoForTenAirportsCopy(i, completion: { (flights) -> () in
-                if let results = flights {
-                    self.flightOfferResults.appendContentsOf(results)
-                }
-                if i >= 9 {
-                    self.sortAllResults()
-                }
-            })
-        }
-//        getInfoForTenAirports()
-
-    }
+//    @IBAction func searchButtonPressed(sender: UIButton) {
+//        
+//        let searchAirports = RandomAirportGenerator.tenRandomAirports(airports)
+//        airports = searchAirports.1
+//        tenRandomAirports = searchAirports.0
+//        for i in 0...9 {
+//            self.getInfoForTenAirportsCopy(i, completion: { (flights) -> () in
+//                if let results = flights {
+//                    self.flightOfferResults.appendContentsOf(results)
+//                }
+//                if i >= 9 {
+//                    self.sortAllResults()
+//                }
+//            })
+//        }
+////        getInfoForTenAirports()
+//
+//    }
     
     func sortAllResults() {
         let sorted = self.flightOfferResults.sort { (flightA, flightB) -> Bool in
@@ -314,6 +319,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         self.flightOfferResults = sorted
         NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            self.isSearching = false
+            self.completionCounter = 0
+            self.spinner.stopAnimating()
             self.performSegueWithIdentifier("TableViewController", sender: self)
         })
     }
@@ -354,7 +362,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //  MARK: Scroll View Delegate
     var completionCounter = 0 {
         didSet {
-            print("Just completed search #\(completionCounter)")
+            if completionCounter > 0 {
+                print("Just completed search #\(completionCounter)")
+            }
         }
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -366,6 +376,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func fetchResults() {
         if !self.isSearching {
             self.isSearching = true
+            self.spinner.startAnimating()
             let searchAirports = RandomAirportGenerator.tenRandomAirports(airports)
             airports = searchAirports.1
             tenRandomAirports = searchAirports.0

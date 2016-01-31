@@ -59,7 +59,7 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
             self.viewModel = FlightDetailViewModel(flight: flight)
             FlickerAPI.searchFlickrByTerm(self.destinationCity!) { (success, data) -> () in
                 if success {
-                    print(data)
+//                    print(data)
                     if let data = data {
                         if let flickrPhotoArray = FlickrJSONService.parsePhotoSearchJSON(data) {
                             if flickrPhotoArray.count > 0 {
@@ -68,6 +68,7 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
                                 let image = UIImage(data: imageData!)
                                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                                     self.buyButton.setBackgroundImage(image, forState: UIControlState.Normal)
+                                    self.buyButton.contentMode = UIViewContentMode.ScaleAspectFill
                                 })
                             }
                         }

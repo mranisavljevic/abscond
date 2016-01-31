@@ -24,7 +24,7 @@ class FlightDetailCollectionViewCell: UICollectionViewCell {
             self.airportCodesLabel.text = airports
             self.airlineLabel.text = airline
             self.durationLabel.text = duration
-            self.backgroundColor = departing ? kExpediaYellow : kYellowTinted
+            self.backgroundColor = departing ? kDepartureColor : kReturnColor
         }
     }
     

@@ -9,8 +9,11 @@
 import UIKit
 
 let kExpediaBlue = UIColor(colorLiteralRed: 0.0/255, green: 53.0/255, blue: 95.0/255, alpha: 1.0)
+let kDepartureColor = UIColor(colorLiteralRed: 89.0/255, green: 117.0/255, blue: 139.0/255, alpha: 1.0)
+let kReturnColor = UIColor(colorLiteralRed: 149.0/255, green: 194.0/255, blue: 230.0/255, alpha: 1.0)
 let kExpediaYellow = UIColor(colorLiteralRed: 255.0/255, green: 210.0/255, blue: 0.0/255, alpha: 1.0)
 let kYellowTinted = UIColor(colorLiteralRed: 255.0/255, green: 165.0/255, blue: 0.0/255, alpha: 1.0)
+let kRedTinted = UIColor(colorLiteralRed: 255.0/255, green: 132.0/255, blue: 132.0/255, alpha: 1.0)
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
