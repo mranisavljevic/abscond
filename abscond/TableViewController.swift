@@ -8,6 +8,10 @@
 
 import UIKit
 
+let kExpediaBlue = UIColor(colorLiteralRed: 0.0/255, green: 53.0/255, blue: 95.0/255, alpha: 1.0)
+let kExpediaYellow = UIColor(colorLiteralRed: 255.0/255, green: 210.0/255, blue: 0.0/255, alpha: 1.0)
+let kYellowTinted = UIColor(colorLiteralRed: 255.0/255, green: 165.0/255, blue: 0.0/255, alpha: 1.0)
+
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,8 +29,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.dataSource = self
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
-        self.tableView.backgroundColor = UIColor(colorLiteralRed: 0.0/255, green: 53.0/255, blue: 95.0/255, alpha: 1.0)
-        self.tableView.separatorColor = UIColor(colorLiteralRed: 0.0/255, green: 53.0/255, blue: 95.0/255, alpha: 1.0)
+        self.tableView.backgroundColor = kExpediaBlue
+        self.tableView.separatorColor = kExpediaYellow
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
