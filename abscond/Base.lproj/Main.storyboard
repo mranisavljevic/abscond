@@ -27,9 +27,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPIN THE GLOBE!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmv-Ul-ZYx">
                                 <rect key="frame" x="160" y="84" width="280" height="41"/>
                                 <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="32"/>
-                                <color key="textColor" red="0.92941176470588238" green="0.55294117647058827" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.82352941180000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.29803921568627451" green="0.16078431372549018" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="0.0" green="0.20784313725490194" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uCi-8O-64t">
@@ -55,7 +55,7 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCHING FLIGHTS..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-go-Hiv">
                                 <rect key="frame" x="166" y="149" width="269" height="30"/>
                                 <fontDescription key="fontDescription" name="CapitalsRegular" family="Capitals" pointSize="24"/>
-                                <color key="textColor" red="0.57647058819999997" green="0.33725490200000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qCD-P5-Yfc">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -109,7 +109,7 @@
                         <constraints>
                             <constraint firstItem="Yh6-dy-YHD" firstAttribute="top" secondItem="qCD-P5-Yfc" secondAttribute="bottom" id="RvP-uW-RVn"/>
                             <constraint firstItem="qCD-P5-Yfc" firstAttribute="leading" secondItem="PSv-F5-L9z" secondAttribute="leading" id="SPm-VD-hE6"/>
-                            <constraint firstItem="qCD-P5-Yfc" firstAttribute="top" secondItem="PSv-F5-L9z" secondAttribute="top" constant="20" id="eaj-Ic-Om9"/>
+                            <constraint firstItem="qCD-P5-Yfc" firstAttribute="top" secondItem="PSv-F5-L9z" secondAttribute="top" id="eaj-Ic-Om9"/>
                             <constraint firstAttribute="trailing" secondItem="qCD-P5-Yfc" secondAttribute="trailing" id="op1-Pu-Quo"/>
                         </constraints>
                     </view>
