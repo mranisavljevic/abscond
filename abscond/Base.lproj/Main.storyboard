@@ -102,6 +102,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="qCD-P5-Yfc" id="4zx-5m-En8"/>
+                        <segue destination="eHp-Aw-AiR" kind="show" identifier="FlightDetailViewController" id="UP8-8r-5Oe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUn-4S-FT9" userLabel="First Responder" sceneMemberID="firstResponder"/>

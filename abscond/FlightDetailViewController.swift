@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class FlightDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class FlightDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, SFSafariViewControllerDelegate {
     
     class func identifier() -> String {
         return "FlightDetailViewController"
@@ -21,7 +22,7 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     var flight: Flight?
     
-    var flightSegments = [String]() {
+    var flightSegments = [[String : AnyObject]]() {
         didSet {
             self.segmentCollectionView.reloadData()
         }
@@ -30,27 +31,26 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     private var viewModel: FlightDetailViewModel? {
         didSet {
             guard let model = self.viewModel else { return }
-//            self.priceLabel.text = model.price
-//            self.seatsRemainingLabel.text = "\(model.seatsRemaining) SEATS LEFT!"
-//            self.flightSegments = model.legs
+            self.priceLabel.text = model.price
+            self.seatsRemainingLabel.text = model.seatsRemaining == 1 ? "\(model.seatsRemaining) SEAT LEFT!" : "\(model.seatsRemaining) SEATS LEFT!"
+            self.flightSegments = model.legs
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.buyButton.layer.cornerRadius = self.buyButton.frame.size.width / 2
+        self.segmentCollectionView.delegate = self
+        self.segmentCollectionView.dataSource = self
+        let nib = UINib(nibName: "FlightDetailCollectionViewCell", bundle: nil)
+        self.segmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "FlightDetailCollectionViewCell")
+        if let flight = self.flight {
+            self.viewModel = FlightDetailViewModel(flight: flight)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        self.buyButton.layer.cornerRadius = self.buyButton.frame.size.width / 2
-//        self.segmentCollectionView.delegate = self
-//        self.segmentCollectionView.dataSource = self
-//        let nib = UINib(nibName: "FlightDetailCollectionViewCell", bundle: nil)
-//        self.segmentCollectionView.registerNib(nib, forCellWithReuseIdentifier: "FlightDetailCollectionViewCell")
-        
-        if let flight = self.flight {
-            self.viewModel = FlightDetailViewModel(flight: flight)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +58,13 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     @IBAction func buyButtonPressed(sender: UIButton) {
-        
+        guard let flight = self.flight else { return }
+        let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet()
+        guard let convertedUrl = flight.detailsUrl.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters), detailsUrl = NSURL(string: convertedUrl) else { return }
+        print(convertedUrl)
+        let safariVC = SFSafariViewController(URL: detailsUrl, entersReaderIfAvailable: true)
+        safariVC.delegate = self
+        self.presentViewController(safariVC, animated: true, completion: nil)
     }
     
     //MARK: UICollectionViewDelegate/Datasource
@@ -69,7 +75,8 @@ class FlightDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FlightDetailCollectionViewCell", forIndexPath: indexPath) as! FlightDetailCollectionViewCell
-        cell.segmentString = self.flightSegments[indexPath.row]
+        cell.segmentNumber = "\(indexPath.row + 1)"
+        cell.segmentStrings = self.flightSegments[indexPath.row]
         return cell
     }
     

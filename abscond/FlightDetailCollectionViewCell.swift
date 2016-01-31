@@ -10,12 +10,21 @@ import UIKit
 
 class FlightDetailCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var segmentLabel: UILabel!
+    @IBOutlet weak var datesTimesLabel: UILabel!
+    @IBOutlet weak var airportCodesLabel: UILabel!
+    @IBOutlet weak var airlineLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+
+    var segmentNumber: String?
     
-    var segmentString: String? {
+    var segmentStrings: [String : AnyObject]? {
         didSet {
-            guard let segment = self.segmentString else { return }
-            self.segmentLabel.text = segment
+            guard let segment = self.segmentStrings, dates = segment["datesAndTimes"] as? String, airports = segment["airportCodes"] as? String, airline = segment["airline"] as? String, duration = segment["duration"] as? String, departing = segment["departing"] as? Bool else { return }
+            self.datesTimesLabel.text = dates
+            self.airportCodesLabel.text = airports
+            self.airlineLabel.text = airline
+            self.durationLabel.text = duration
+            self.backgroundColor = departing ? UIColor.greenColor() : UIColor.redColor()
         }
     }
     
