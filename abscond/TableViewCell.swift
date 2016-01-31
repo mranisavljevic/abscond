@@ -48,6 +48,7 @@ class TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 210.0 / 255.0, blue: 0.0, alpha: 1.0)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
