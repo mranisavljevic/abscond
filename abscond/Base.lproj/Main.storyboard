@@ -156,7 +156,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-5G-Ica">
                                 <rect key="frame" x="20" y="168" width="560" height="204"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6Z-OF-iBp">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -179,7 +179,7 @@
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3F-sZ-65c">
                                 <rect key="frame" x="200" y="380" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.82842303299999998" green="0.91177850999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="dnF-oq-nTO"/>
                                     <constraint firstAttribute="width" constant="200" id="pc5-Vm-P5e"/>
@@ -195,7 +195,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.82352941176470584" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="a3F-sZ-65c" firstAttribute="top" secondItem="Z3b-5G-Ica" secondAttribute="bottom" constant="8" id="HvU-n6-MnG"/>
                             <constraint firstItem="P2q-cK-4Hr" firstAttribute="top" secondItem="a3F-sZ-65c" secondAttribute="bottom" constant="20" id="URB-Yz-FHO"/>

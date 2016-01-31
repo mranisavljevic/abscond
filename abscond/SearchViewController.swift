@@ -361,7 +361,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //  MARK: Scroll View Delegate
     var completionCounter = 0 {
         didSet {
-            print("Just completed search #\(completionCounter)")
+            if completionCounter > 0 {
+                print("Just completed search #\(completionCounter)")
+            }
         }
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -382,7 +384,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                     }
                 })
             }
-
 //            getInfoForTenAirports()
         }
 
