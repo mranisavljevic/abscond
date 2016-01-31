@@ -25,6 +25,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.dataSource = self
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
+        self.tableView.backgroundColor = UIColor(colorLiteralRed: 0.0/255, green: 53.0/255, blue: 95.0/255, alpha: 1.0)
+        self.tableView.separatorColor = UIColor(colorLiteralRed: 0.0/255, green: 53.0/255, blue: 95.0/255, alpha: 1.0)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

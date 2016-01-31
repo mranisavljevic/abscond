@@ -17,12 +17,29 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     var nextWeekendDates = (start: "", end: "")
     
+    var isSearching = false
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var searchingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getNextWeekendDates()
         self.setupCollectionView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.isSearching = false
+        self.searchingLabel.hidden = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.isSearching = true
+        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: 1000, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
+        self.isSearching = false
+        self.searchingLabel.hidden = true
     }
     
     func setupCollectionView() {
@@ -34,6 +51,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         self.collectionView.collectionViewLayout = layout
         self.collectionView.backgroundColor = UIColor(colorLiteralRed: 51.0/255, green: 103.0/255, blue: 153.0/255, alpha: 1.0)
+        self.collectionView.showsHorizontalScrollIndicator = false
     }
     
     func getNextWeekendDates() {
@@ -219,7 +237,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //  MARK: Collection View Data Source
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 2000
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -241,15 +259,16 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //  MARK: Scroll View Delegate
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        let paths = self.collectionView.indexPathsForVisibleItems()
-        
-        for path in paths {
-            if 10 - path.row < 2 || path.row == 0 {
-                self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: 5, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
-            }
+        if !self.isSearching {
+            self.isSearching = true
+            self.searchingLabel.hidden = false
+            let searchAirports = RandomAirportGenerator.tenRandomAirports(airports)
+            airports = searchAirports.1
+            tenRandomAirports = searchAirports.0
+            getInfoForTenAirports()
         }
+
+
     }
-    
     
 }
