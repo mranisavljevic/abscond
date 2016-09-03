@@ -72,7 +72,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     //MARK: UINavigationControllerDelegate
     
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
-        if let vc = viewController as? SearchViewController {
+        if let _ = viewController as? SearchViewController {
             navigationController.navigationBarHidden = true
         }
     }
